@@ -4,10 +4,20 @@
       "main": "src/wiSh_backend/ReportCase.mo",
       "type": "motoko"
     },
+    "wallet": {
+      "main": "src/wiSh_backend/Wallet.mo",
+      "type": "motoko"
+    },
+    "user_manager": {
+      "main": "src/wiSh_backend/UserManager.mo",
+      "type": "motoko"
+    },
     "wiSh_frontend": {
       "dependencies": [
-        "wiSh_backend"
-            ],
+        "wiSh_backend",
+        "wallet",
+        "user_manager"
+      ],
       "source": [
         "src/wiSh_frontend/dist"
       ],
