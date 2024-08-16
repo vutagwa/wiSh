@@ -60,7 +60,7 @@ const CommunityHub = () => {
     },
   ]);
 
-  const [newPostTitle, setNewPostTitle] = useState('');
+    const [newPostTitle, setNewPostTitle] = useState('');
   const [newPostContent, setNewPostContent] = useState('');
   const [newComment, setNewComment] = useState({ postId: null, text: '' });
   const [wishCoins, setWishCoins] = useState(0); // Changed from balance to wishCoins

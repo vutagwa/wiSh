@@ -707,3 +707,64 @@ button:disabled {
   background-color: #ddd;
   cursor: not-allowed;
 }
+.donation-container {
+  padding: 20px;
+  background-color: #fff0f6; /* Light pink background */
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h2 {
+  color: #ff007f; /* Pink color for headers */
+  margin-bottom: 20px;
+}
+
+.balance {
+  font-size: 1.2em;
+  color: #ff007f; /* Pink color for balance */
+  margin-bottom: 15px;
+}
+
+.donation-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ff007f; /* Pink border */
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.campaigns-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.campaign-card {
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ff007f; /* Pink border */
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.campaign-card h3 {
+  color: #ff007f; /* Pink color for campaign titles */
+}
+
+.donate-button {
+  background-color: #ff007f; /* Pink background */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+  margin-top: 10px;
+
+  &:hover {
+      background-color: #e6007e; /* Darker pink on hover */
+  }
+}

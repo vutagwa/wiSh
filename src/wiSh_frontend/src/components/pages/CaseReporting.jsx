@@ -82,7 +82,7 @@ const CaseReportingForm = () => {
     return (
         <div className="case-reporting-form">
             <h2>Report a Crime</h2>
-            <p>Wish Coins: {wishCoins}</p> {/* Display Wish Coins */}
+            <p>💰: {wishCoins}</p> {/* Display Wish Coins */}
             <form onSubmit={handleSubmit}>
                 <label>
                     Location:

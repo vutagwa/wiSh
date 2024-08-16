@@ -4,9 +4,12 @@ const DonationCampaigns = () => {
     const [wishCoins, setWishCoins] = useState(100);
     const [donationAmount, setDonationAmount] = useState(0);
     const [campaigns, setCampaigns] = useState([
-        { id: 1, name: 'Education for All', description: 'Support education for underprivileged children', goal: 1000, raised: 500 },
-        { id: 2, name: 'Climate Action Now', description: 'Support climate change mitigation efforts', goal: 5000, raised: 2000 },
-        { id: 3, name: 'Healthcare for All', description: 'Support healthcare initiatives for marginalized communities', goal: 2000, raised: 1000 },
+        { id: 1, name: 'Homocide affected families', description: 'Lorem, ipsum dolor sit it, otam cumque recusandae. Suscipit ducimus maiores debitis eos fuga dolores provident.', goal: 1000, raised: 500 },
+        { id: 2, name: 'suicide survivers', description: 'Lorem, ipsum dolor sit it, otam cumque recusandae. Suscipit ducimus maiores debitis eos fuga dolores provident.', goal: 5000, raised: 2000 },
+        { id: 3, name: 'Rape and assualt survivours', description: 'Lorem, ipsum dolor sit it, otam cumque recusandae. Suscipit ducimus maiores debitis eos fuga dolores provident.', goal: 2000, raised: 1000 },
+        { id: 4, name: 'FGM elimination', description: 'Lorem, ipsum dolor sit it, otam cumque recusandae. Suscipit ducimus maiores debitis eos fuga dolores provident.', goal: 3000, raised: 1500 },
+        { id: 5, name: 'Human rights advocacy', description: 'Support clean water access for remote areas', goal: 2500, raised: 800 },
+        { id: 6, name: 'Coercion and grooming awareness', description: 'Support human rights and social justice initiatives', goal: 4000, raised: 2200 },
     ]);
 
     const handleDonationChange = (e) => {
@@ -28,24 +31,25 @@ const DonationCampaigns = () => {
     return (
         <div className="donation-container">
             <h2>Donate to a Campaign</h2>
-            <p>Wish Coins Balance: {wishCoins}</p>
+            <p className="balance">💰 Balance: {wishCoins} Wish Coins</p>
             <input
                 type="number"
                 value={donationAmount}
                 onChange={handleDonationChange}
                 placeholder="Enter donation amount"
+                className="donation-input"
             />
-            <ul>
+            <div className="campaigns-grid">
                 {campaigns.map((campaign) => (
-                    <li key={campaign.id}>
+                    <div key={campaign.id} className="campaign-card">
                         <h3>{campaign.name}</h3>
                         <p>{campaign.description}</p>
                         <p>Goal: {campaign.goal} Wish Coins</p>
                         <p>Raised: {campaign.raised} Wish Coins</p>
-                        <button onClick={() => handleDonate(campaign.id)}>Donate</button>
-                    </li>
+                        <button onClick={() => handleDonate(campaign.id)} className="donate-button">Donate</button>
+                    </div>
                 ))}
-            </ul>
+            </div>
         </div>
     );
 };
