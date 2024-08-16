@@ -1,4 +1,4 @@
-/* AdminDashboard.css */
+/* AdminDashboard */
 
 .admin-dashboard {
   display: flex;
@@ -480,47 +480,94 @@ body {
   width: 100px;
 }
 
-/*user dashboard*/
+/* UserDashboard */
 .user-dashboard {
   display: flex;
+  height: 100vh; /* Full viewport height */
+}
+
+.bottom-links {
+  margin-top: auto;
 }
 
 .sidebar {
-  width: 250px;
-  background-color: #f4f4f4;
-  padding: 20px;
-  height: 100vh;
-  position: fixed;
+  width: 100px; /* Updated width for the sidebar */
+  background-color: #ecccdc; /* Sidebar background color */
+  color: white;
+  padding: 10px;
+  height: 100%; /* Full height */
+  position: fixed; /* Fix the sidebar to the left */
+  transition: width 0.3s; /* Smooth transition for width change */
+}
+
+.sidebar:hover {
+  width: 200px; /* Expanded width on hover */
 }
 
 .sidebar ul {
-  list-style-type: none;
+  list-style: none;
   padding: 0;
 }
 
 .sidebar li {
-  margin-bottom: 20px;
+  margin: 20px 0;
+}
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar a:hover {
+  color: #fff;
+  background-color: #e0a7c6; /* Background color on hover */
+  padding: 10px;
+  border-radius: 5px;
 }
 
 .sidebar .link-text {
+  visibility: hidden; /* Hide text initially */
+}
+
+.sidebar:hover .link-text {
+  visibility: visible; /* Show text on hover */
   margin-left: 10px;
+  color: #f5f1f1;
+}
+
+.bottom-links {
+  margin-top: auto;
 }
 
 .content {
-  margin-left: 270px;
+  flex: 1;
+  background-color: #fff0f5; /* Background color */
   padding: 20px;
-  width: calc(100% - 270px);
+  margin-left: 120px; /* Adjust margin to accommodate fixed sidebar width */
+  width: calc(100% - 120px); /* Adjust width accordingly */
 }
 
 .content h1 {
-  font-size: 24px;
-  color: #333;
+  color: #ff1493; /* Heading color */
 }
 
-.content p {
-  font-size: 16px;
-  color: #666;
+/* Adjustments for mobile responsiveness */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100px; /* Reduced width for small screens */
+  }
+  .sidebar:hover {
+    width: 100px; /* Fixed width on hover for small screens */
+  }
+  .content {
+    margin-left: 0; /* No margin on small screens */
+    width: 100%; /* Full width */
+  }
 }
+
+
 /* Home */
 
 .home-container {
@@ -573,90 +620,53 @@ body {
 .card p {
   color: #666; /* Slightly darker text for paragraphs */
 }
-/* UserDashboard */
-.user-dashboard {
-  display: flex;
-  height: 100vh;
-}
 
-.sidebar {
-  width: 250px;
-  background-color: #fcbdcf; /* Lilac background for the sidebar */
-  color: #8f8c8c; /* White text color */
-  display: flex;
-  flex-direction: column;
-}
-
-.sidebar ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.sidebar li {
-  padding: 15px;
-  border-bottom: 1px solid #ffffff; /* White border between items */
-}
-
-.sidebar a {
-  text-decoration: none;
-  color: #ffffff; /* White text color */
-  display: flex;
-  align-items: center;
-}
-
-.sidebar .link-text {
-  margin-left: 10px;
-}
-
-.sidebar a:hover {
-  background-color: #FFC0CB; /* Pink background on hover */
-  color: #000000; /* Black text color on hover */
-}
-
-.content {
-  flex: 1;
-  width: 1000px;
-  padding: 20px;
-  background-color: #fadde2; /* Pink background for the content area */
-  color: #000000; /* Black text color */
-}
+/* Wallet.css */
 
 .wallet-container {
-  font-family: Arial, sans-serif;
-  color: #333;
-  padding: 20px;
+  width: 100%;
   max-width: 600px;
-  margin: auto;
-  background: #f8f9fa;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
 }
 
 .balance {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
-  color: #e91e63;
+  color: #f1a9e2;
+  margin-bottom: 20px;
 }
 
 .transaction-history {
-  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .transaction-history h3 {
+  font-size: 18px;
   margin-bottom: 10px;
+  color: #555;
 }
 
 .transaction-history ul {
-  list-style: none;
+  list-style-type: none;
   padding: 0;
+  margin: 0;
 }
 
 .transaction-history li {
-  background: #fff;
-  padding: 10px;
-  margin-bottom: 5px;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 8px 0;
+  border-bottom: 1px solid #ddd;
+  color: #666;
 }
 
 .actions {
@@ -664,29 +674,36 @@ body {
 }
 
 .actions h3 {
+  font-size: 18px;
   margin-bottom: 10px;
+  color: #555;
 }
 
-.actions input {
-  display: block;
-  margin-bottom: 10px;
+input[type="number"], input[type="text"] {
+  width: calc(100% - 20px);
   padding: 10px;
+  margin-bottom: 10px;
   border: 1px solid #ddd;
   border-radius: 4px;
-  width: calc(100% - 22px);
-}
-
-.action-button {
-  background-color: #e91e63;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 4px;
-  cursor: pointer;
   font-size: 16px;
 }
 
-.action-button:hover {
-  background-color: #d81b60;
+button.action-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #fc7ee1;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
+button.action-button:hover {
+  background-color: #ce5cb5;
+}
+
+button:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}

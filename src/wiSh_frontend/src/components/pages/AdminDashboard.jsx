@@ -16,31 +16,31 @@ const AdminDashboard = () => {
         <nav className="sidebar">
           <ul>
             <li>
-              <Link to="./admin/home">
+              <Link to="/admin/home">
                 <FontAwesomeIcon icon={faHome} />
                 <span className="link-text">Home</span>
               </Link>
             </li>
             <li>
-              <Link to="./admin/manageUser">
+              <Link to="/admin/manageUsers">
                 <FontAwesomeIcon icon={faUsers} />
                 <span className="link-text">Manage Users</span>
               </Link>
             </li>
             <li>
-              <Link to="./admin/mangeContent">
+              <Link to="/admin/manageContent">
                 <FontAwesomeIcon icon={faFileAlt} />
                 <span className="link-text">Manage Content</span>
               </Link>
             </li>
             <li>
-              <Link to="./admin/manageCases">
+              <Link to="/admin/manageCases">
                 <FontAwesomeIcon icon={faFolder} />
                 <span className="link-text">Manage Cases</span>
               </Link>
             </li>
             <li>
-              <Link to="/admin/events">
+              <Link to="/admin/manageEvents">
                 <FontAwesomeIcon icon={faCalendar} />
                 <span className="link-text">Manage Events</span>
               </Link>
@@ -63,11 +63,11 @@ const AdminDashboard = () => {
         </nav>
         <main className="content">
           <Routes>
-            <Route path="./admin/Home" element={<Home />} />
-            <Route path="./admin/manageUser" element={<ManageUsers />} />
-            <Route path="./admin/mangeContent" element={<ManageContent />} />
-            <Route path="/./admin/manageCases" element={<ManageCases />} />
-            <Route path="./admin/manageevents" element={<ManageEvents />} />
+            <Route path="/admin/home" element={<Home />} />
+            <Route path="/admin/manageUsers" element={<ManageUsers />} />
+            <Route path="/admin/manageContent" element={<ManageContent />} />
+            <Route path="/admin/manageCases" element={<ManageCases />} />
+            <Route path="/admin/manageEvents" element={<ManageEvents />} />
             {/* Add routes for Settings and Privacy if needed */}
           </Routes>
         </main>

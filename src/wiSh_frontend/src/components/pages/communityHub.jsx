@@ -63,7 +63,7 @@ const CommunityHub = () => {
   const [newPostTitle, setNewPostTitle] = useState('');
   const [newPostContent, setNewPostContent] = useState('');
   const [newComment, setNewComment] = useState({ postId: null, text: '' });
-  const [balance, setBalance] = useState(0);
+  const [wishCoins, setWishCoins] = useState(0); // Changed from balance to wishCoins
 
   const handleNewPost = (e) => {
     e.preventDefault();
@@ -77,7 +77,7 @@ const CommunityHub = () => {
       setPosts([...posts, newPost]);
       setNewPostTitle('');
       setNewPostContent('');
-      setBalance(balance + 5); // Add 5 shillings for a new post
+      setWishCoins(wishCoins + 10); // Add 10 Wish Coins for a new post
     }
   };
 
@@ -101,7 +101,7 @@ const CommunityHub = () => {
         })
       );
       setNewComment({ postId: null, text: '' });
-      setBalance(balance + 2); // Add 2 shillings for a new comment
+      setWishCoins(wishCoins + 2); // Add 2 Wish Coins for a new comment
     }
   };
 
@@ -111,7 +111,7 @@ const CommunityHub = () => {
         <h1 className="intro-header">Welcome to Wish</h1>
         <div className="wallet">
           <span className="wallet-icon">💰</span>
-          <span className="wallet-balance">{balance} Shillings</span>
+          <span className="wallet-balance">{wishCoins} Wish Coins</span> {/* Updated to Wish Coins */}
         </div>
       </div>
       <div className="intro-section">

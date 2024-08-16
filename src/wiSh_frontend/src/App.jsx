@@ -1,11 +1,12 @@
-import Wallet from "./components/pages/wallet";
+import AdminDashboard from "./components/pages/AdminDashboard";
+import UserDashboard from "./components/pages/UserDashboard";
 
 function App() {
 
   
   return (
     <>
-    <Wallet/>
+    <UserDashboard/>
     </>
   );
 }

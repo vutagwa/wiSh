@@ -4,21 +4,21 @@ const Home = () => {
   return (
     <div className="home-container">
       <header className="home-header">
-        <h1>Welcome to Wish</h1>
+        <h1>Welcome to Wish🎀</h1>
         <p>Empowering Change Through Awareness</p>
       </header>
       <section className="home-content">
         <div className="card">
           <h2>Get Involved</h2>
-          <p>Discover ways you can contribute to meaningful causes and make a difference in the world.</p>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id quo, suscipit, deserunt ad non voluptatem possimus molestiae nostrum minus amet porro natus maiores error aliquam dolore tenetur magnam officia! Consequuntur.</p>
         </div>
         <div className="card">
           <h2>Learn More</h2>
-          <p>Explore resources and stories to better understand social issues and how to address them.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Expedita consectetur, voluptatem laborum assumenda repellendus nesciunt numquam. Eius delectus odio, qui exercitationem minima sed ab assumenda soluta suscipit iusto ad rerum!</p>
         </div>
         <div className="card">
           <h2>Join the Community</h2>
-          <p>Connect with like-minded individuals and be a part of a supportive network dedicated to social change.</p>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla ab, atque maiores, labore laborum ducimus numquam consequatur, distinctio delectus quae fugit neque sequi voluptatem maxime dolor velit rem adipisci ex.</p>
         </div>
       </section>
     </div>

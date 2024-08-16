@@ -1,10 +1,38 @@
 import React, { useState } from 'react';
 import { Calendar } from 'react-calendar';
-import { Actor, HttpAgent } from '@dfinity/agent';
-import { idlFactory, canisterId } from './dfx_generated/report_case';
+import { HttpAgent } from '@dfinity/agent';
+import { Actor } from '@dfinity/agent'; // Ensure you import Actor if you're using it
+import { idlFactory, canisterId } from '../../dfx_generates/report_case';
 
+// Initialize the HttpAgent
 const agent = new HttpAgent();
-const reportCaseActor = Actor.createActor(idlFactory, { agent, canisterId });
+
+// Create an actor instance, adapting to the API version
+let reportCaseActor;
+try {
+    // Check if createActor method exists
+    if (typeof Actor.createActor === 'function') {
+        // New API
+        reportCaseActor = Actor.createActor(idlFactory, { agent, canisterId });
+    } else {
+        // Old API or alternative approach
+        reportCaseActor = Actor.createActor(idlFactory, {
+            agent,
+            canisterId,
+        });
+    }
+} catch (err) {
+    console.error('Error creating actor:', err);
+}
+
+// Ensure the agent is connected to the network
+(async () => {
+    try {
+        await agent.fetchRootKey();
+    } catch (err) {
+        console.error('Error fetching root key:', err);
+    }
+})();
 
 const CaseReportingForm = () => {
     const [location, setLocation] = useState('');
@@ -14,6 +42,7 @@ const CaseReportingForm = () => {
     const [description, setDescription] = useState('');
     const [victimName, setVictimName] = useState('');
     const [offenderPicture, setOffenderPicture] = useState(null);
+    const [wishCoins, setWishCoins] = useState(0); // State for Wish Coins
 
     const handleDateChange = (newDate) => {
         setDate(newDate);
@@ -39,6 +68,10 @@ const CaseReportingForm = () => {
                 victimName || null,
                 pictureBlob || null
             );
+
+            // Update Wish Coins after successful report submission
+            setWishCoins(wishCoins + 10);
+
             alert('Report submitted successfully');
         } catch (err) {
             console.error('Failed to submit report:', err);
@@ -49,6 +82,7 @@ const CaseReportingForm = () => {
     return (
         <div className="case-reporting-form">
             <h2>Report a Crime</h2>
+            <p>Wish Coins: {wishCoins}</p> {/* Display Wish Coins */}
             <form onSubmit={handleSubmit}>
                 <label>
                     Location:
