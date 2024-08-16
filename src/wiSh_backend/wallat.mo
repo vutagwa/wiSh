@@ -1,8 +1,8 @@
-// wallet.mo
-
 import DfxResult "mo:base/DfxResult";
 
+// Define the Wallet actor
 actor Wallet {
+
   // Define a data model for the WishCoins balance and transaction history
   type Wallet = {
     balance: Nat;
@@ -10,41 +10,99 @@ actor Wallet {
   };
 
   type Transaction = {
-    type: Text; // e.g., "send" or "donate"
+    type: Text; 
     amount: Nat;
-    recipient: Text; // optional
+    recipient: Text; 
   };
 
-  // Initialize the WishCoins balance and transaction history
-  let wallets: [Wallet] = [{ balance = 100; transactions = [] }];
+  // Maintain a mapping of user wallets
+  var wallets: HashMap<Text, Wallet> = HashMap.fromPairs([]);
 
-  // Function to update the WishCoins balance when a user donates to a campaign
-  public func donateWishCoins(campaignId: Nat, amount: Nat) : async DfxResult {
-    // Verify the user's WishCoins balance has sufficient amount
-    let userWallet = wallets[0];
-    if (userWallet.balance >= amount) {
-      // Update the campaign's raised amount
-      // (assuming you have a separate data model for campaigns)
+  // Initialize the Wallet with a user for testing
+  init() : async () {
+    wallets.put("user1", { balance = 100; transactions = [] });
+  }
 
-      // Update the user's WishCoins balance
-      userWallet.balance -= amount;
-      userWallet.transactions.push({
-        type = "donate";
-        amount;
-        recipient = "";
-      });
+  // Function to donate WishCoins to a campaign
+  public func donateWishCoins(userId: Text, campaignId: Nat, amount: Nat) : async DfxResult {
+    switch (wallets.get(userId)) {
+      case (?userWallet) {
+        if (userWallet.balance >= amount) {
+          // Update the user's WishCoins balance
+          userWallet.balance -= amount;
+          userWallet.transactions.push({
+            type = "donate";
+            amount;
+            recipient = "campaign_" # Nat.toText(campaignId);
+          });
 
-      // Update the WishCoins balance and transaction history
-      wallets[0] := userWallet;
+          // Update the wallet
+          wallets.put(userId, userWallet);
 
-      return #ok();
-    } else {
-      return #err("Insufficient WishCoins balance");
+          return #ok();
+        } else {
+          return #err("Insufficient WishCoins balance");
+        }
+      };
+      case (_) {
+        return #err("User not found");
+      };
+    }
+  }
+
+  // Function to send WishCoins to another user
+  public func sendWishCoins(senderId: Text, recipientId: Text, amount: Nat) : async DfxResult {
+    switch (wallets.get(senderId)) {
+      case (?senderWallet) {
+        if (senderWallet.balance >= amount) {
+          switch (wallets.get(recipientId)) {
+            case (?recipientWallet) {
+              // Update sender's wallet
+              senderWallet.balance -= amount;
+              senderWallet.transactions.push({
+                type = "send";
+                amount;
+                recipient = recipientId;
+              });
+              wallets.put(senderId, senderWallet);
+
+              // Update recipient's wallet
+              let updatedRecipientWallet = {
+                balance = recipientWallet.balance + amount;
+                transactions = recipientWallet.transactions;
+              };
+              updatedRecipientWallet.transactions.push({
+                type = "receive";
+                amount;
+                recipient = senderId;
+              });
+              wallets.put(recipientId, updatedRecipientWallet);
+
+              return #ok();
+            };
+            case (_) {
+              return #err("Recipient not found");
+            };
+          }
+        } else {
+          return #err("Insufficient WishCoins balance");
+        }
+      };
+      case (_) {
+        return #err("Sender not found");
+      };
     }
   }
 
   // Expose an API endpoint to get the user's WishCoins balance
-  public query func getWishCoinsBalance() : async Nat {
-    return wallets[0].balance;
+  public query func getWishCoinsBalance(userId: Text) : async Nat {
+    switch (wallets.get(userId)) {
+      case (?userWallet) {
+        return userWallet.balance;
+      };
+      case (_) {
+        return 0; // Return 0 if user is not found
+      };
+    }
   }
 }

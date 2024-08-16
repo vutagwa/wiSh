@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useWishCoins } from './WishCoinsContext';
+import { sendWishCoinsToBackend, donateWishCoinsToBackend } from '../../dfx_generates/api';
 
 const Wallet = () => {
     const { wishCoins, transactionHistory, updateWishCoins, addTransaction } = useWishCoins();
@@ -10,7 +11,7 @@ const Wallet = () => {
     const handleSend = async () => {
         if (sendAmount > 0 && recipient) {
             try {
-                await reportCaseActor.sendWishCoins(sendAmount, recipient);
+                await sendWishCoinsToBackend(sendAmount, recipient);
                 await updateWishCoins();
                 addTransaction({ type: 'send', amount: sendAmount, recipient });
                 setSendAmount(0);
@@ -25,7 +26,7 @@ const Wallet = () => {
     const handleDonate = async () => {
         if (donateAmount > 0) {
             try {
-                await reportCaseActor.donateWishCoins(donateAmount);
+                await donateWishCoinsToBackend(donateAmount);
                 await updateWishCoins();
                 addTransaction({ type: 'donate', amount: donateAmount });
                 setDonateAmount(0);
