@@ -1,13 +1,13 @@
 {
   "canisters": {
     "wiSh_backend": {
-      "main": "src/wiSh_backend/main.mo",
+      "main": "src/wiSh_backend/ReportCase.mo",
       "type": "motoko"
     },
     "wiSh_frontend": {
       "dependencies": [
         "wiSh_backend"
-      ],
+            ],
       "source": [
         "src/wiSh_frontend/dist"
       ],

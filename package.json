@@ -14,5 +14,16 @@
   "type": "module",
   "workspaces": [
     "src/wiSh_frontend"
-  ]
+  ],
+  "dependencies": {
+    "@dfinity/agent": "^1.4.0",
+    "@dfinity/candid": "^1.4.0",
+    "@dfinity/identity": "^1.4.0",
+    "@fortawesome/free-solid-svg-icons": "^6.6.0",
+    "@fortawesome/react-fontawesome": "^0.2.2",
+    "@vitejs/plugin-react": "^4.3.1",
+    "axios": "^1.7.4",
+    "react-calendar": "^5.0.0",
+    "react-router-dom": "^6.26.1"
+  }
 }
