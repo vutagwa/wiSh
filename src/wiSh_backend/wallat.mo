@@ -101,7 +101,7 @@ actor Wallet {
         return userWallet.balance;
       };
       case (_) {
-        return 0; // Return 0 if user is not found
+        return 0; 
       };
     }
   }

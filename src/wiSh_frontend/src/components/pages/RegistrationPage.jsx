@@ -5,7 +5,7 @@ import { AuthClient } from '@dfinity/auth-client';
 
 const RegistrationPage = () => {
     const [username, setUsername] = useState('');
-    const [role, setRole] = useState('user'); // Default to 'user'
+    const [role, setRole] = useState('user'); 
     const [passkey, setPasskey] = useState('');
     const [error, setError] = useState('');
 

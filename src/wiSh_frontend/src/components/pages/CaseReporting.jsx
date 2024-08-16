@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Calendar } from 'react-calendar';
 import { HttpAgent } from '@dfinity/agent';
-import { Actor } from '@dfinity/agent'; // Ensure you import Actor if you're using it
+import { Actor } from '@dfinity/agent'; 
 import { idlFactory, canisterId } from '../../dfx_generates/report_case';
 
 // Initialize the HttpAgent
@@ -10,12 +10,9 @@ const agent = new HttpAgent();
 // Create an actor instance, adapting to the API version
 let reportCaseActor;
 try {
-    // Check if createActor method exists
     if (typeof Actor.createActor === 'function') {
-        // New API
         reportCaseActor = Actor.createActor(idlFactory, { agent, canisterId });
     } else {
-        // Old API or alternative approach
         reportCaseActor = Actor.createActor(idlFactory, {
             agent,
             canisterId,
@@ -25,7 +22,6 @@ try {
     console.error('Error creating actor:', err);
 }
 
-// Ensure the agent is connected to the network
 (async () => {
     try {
         await agent.fetchRootKey();
@@ -42,7 +38,7 @@ const CaseReportingForm = () => {
     const [description, setDescription] = useState('');
     const [victimName, setVictimName] = useState('');
     const [offenderPicture, setOffenderPicture] = useState(null);
-    const [wishCoins, setWishCoins] = useState(0); // State for Wish Coins
+    const [wishCoins, setWishCoins] = useState(0); 
 
     const handleDateChange = (newDate) => {
         setDate(newDate);

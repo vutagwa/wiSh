@@ -68,7 +68,6 @@ const AdminDashboard = () => {
             <Route path="/admin/manageContent" element={<ManageContent />} />
             <Route path="/admin/manageCases" element={<ManageCases />} />
             <Route path="/admin/manageEvents" element={<ManageEvents />} />
-            {/* Add routes for Settings and Privacy if needed */}
           </Routes>
         </main>
       </div>

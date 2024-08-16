@@ -225,14 +225,14 @@ input[type="text"]:focus, textarea:focus {
 }
 
 .intro-section {
-  background-color: #f8f4f9; /* Light lilac background */
+  background-color: #f8f4f9; 
   padding: 20px;
   border-radius: 8px;
   margin-bottom: 20px;
 }
 
 .intro-header {
-  color: #ff66b2; /* Pink */
+  color: #ff66b2; 
   text-align: center;
   margin-bottom: 10px;
   font-size: 24px;
@@ -272,7 +272,7 @@ input[type="text"]:focus, textarea:focus {
 }
 
 .submit-button {
-  background-color: #d8a3e1; /* Lilac */
+  background-color: #d8a3e1; 
   color: #fff;
   padding: 10px 20px;
   border: none;
@@ -281,7 +281,7 @@ input[type="text"]:focus, textarea:focus {
 }
 
 .submit-button:hover {
-  background-color: #b87ecf; /* Darker lilac */
+  background-color: #b87ecf; 
 }
 
 .posts-feed {
@@ -298,7 +298,7 @@ input[type="text"]:focus, textarea:focus {
 }
 
 .post-title {
-  color: #ff66b2; /* Pink */
+  color: #ff66b2; 
   margin: 0 0 10px;
   font-size: 18px;
 }
@@ -327,8 +327,7 @@ input[type="text"]:focus, textarea:focus {
 .comment-form {
   margin-top: 10px;
 }
-/* CommunityHub.css */
-/* CommunityHub.css */
+/* CommunityHub */
 
 body {
   font-family: Arial, sans-serif;
@@ -354,7 +353,7 @@ body {
 
 .intro-header {
   font-size: 2em;
-  color: #d63a7d; /* Pink */
+  color: #d63a7d; 
 }
 
 .wallet {
@@ -369,7 +368,7 @@ body {
 
 .wallet-balance {
   font-size: 1.2em;
-  color: #6f4f6f; /* Lilac */
+  color: #6f4f6f; 
 }
 
 .intro-section {
@@ -379,7 +378,7 @@ body {
 
 .intro-text {
   font-size: 1.1em;
-  color: #6f4f6f; /* Lilac */
+  color: #6f4f6f; 
   margin-top: 10px;
 }
 
@@ -408,7 +407,7 @@ body {
 }
 
 .submit-button {
-  background-color: #d63a7d; /* Pink */
+  background-color: #d63a7d; 
   color: white;
   border: none;
   padding: 10px 15px;
@@ -417,7 +416,7 @@ body {
 }
 
 .submit-button:hover {
-  background-color: #c02a6d; /* Darker pink */
+  background-color: #c02a6d; 
 }
 
 .posts-feed {
@@ -441,7 +440,7 @@ body {
 
 .post-title {
   font-size: 1.2em;
-  color: #d63a7d; /* Pink */
+  color: #d63a7d; 
   margin-bottom: 10px;
 }
 
@@ -483,7 +482,7 @@ body {
 /* UserDashboard */
 .user-dashboard {
   display: flex;
-  height: 100vh; /* Full viewport height */
+  height: 100vh; 
 }
 
 .bottom-links {
@@ -491,17 +490,17 @@ body {
 }
 
 .sidebar {
-  width: 100px; /* Updated width for the sidebar */
-  background-color: #ecccdc; /* Sidebar background color */
+  width: 100px; 
+  background-color: #ecccdc; 
   color: white;
   padding: 10px;
-  height: 100%; /* Full height */
-  position: fixed; /* Fix the sidebar to the left */
-  transition: width 0.3s; /* Smooth transition for width change */
+  height: 100%; 
+  position: fixed; 
+  transition: width 0.3s; 
 }
 
 .sidebar:hover {
-  width: 200px; /* Expanded width on hover */
+  width: 200px; 
 }
 
 .sidebar ul {
@@ -522,17 +521,17 @@ body {
 
 .sidebar a:hover {
   color: #fff;
-  background-color: #e0a7c6; /* Background color on hover */
+  background-color: #e0a7c6; 
   padding: 10px;
   border-radius: 5px;
 }
 
 .sidebar .link-text {
-  visibility: hidden; /* Hide text initially */
+  visibility: hidden; 
 }
 
 .sidebar:hover .link-text {
-  visibility: visible; /* Show text on hover */
+  visibility: visible; 
   margin-left: 10px;
   color: #f5f1f1;
 }
@@ -543,27 +542,27 @@ body {
 
 .content {
   flex: 1;
-  background-color: #fff0f5; /* Background color */
+  background-color: #fff0f5; 
   padding: 20px;
-  margin-left: 120px; /* Adjust margin to accommodate fixed sidebar width */
-  width: calc(100% - 120px); /* Adjust width accordingly */
+  margin-left: 120px;
+  width: calc(100% - 120px);
 }
 
 .content h1 {
-  color: #ff1493; /* Heading color */
+  color: #ff1493; 
 }
 
-/* Adjustments for mobile responsiveness */
+/* mobile responsiveness */
 @media (max-width: 768px) {
   .sidebar {
-    width: 100px; /* Reduced width for small screens */
+    width: 100px; 
   }
   .sidebar:hover {
-    width: 100px; /* Fixed width on hover for small screens */
+    width: 100px; 
   }
   .content {
-    margin-left: 0; /* No margin on small screens */
-    width: 100%; /* Full width */
+    margin-left: 0; 
+    width: 100%; 
   }
 }
 
@@ -571,15 +570,15 @@ body {
 /* Home */
 
 .home-container {
-  background-color: #fff; /* White background for the entire container */
-  color: #333; /* Dark text for readability */
+  background-color: #fff; 
+  color: #333; 
   padding: 20px;
   font-family: 'Arial', sans-serif;
 }
 
 .home-header {
-  background: linear-gradient(135deg, #ffb6c1, #d8bfd8); /* Gradient from pink to lilac */
-  color: #fff; /* White text on gradient background */
+  background: linear-gradient(135deg, #ffb6c1, #d8bfd8); 
+  color: #fff; 
   padding: 20px;
   border-radius: 10px;
   text-align: center;
@@ -614,14 +613,14 @@ body {
 }
 
 .card h2 {
-  color: #d8bfd8; /* Lilac text for headings */
+  color: #d8bfd8; 
 }
 
 .card p {
-  color: #666; /* Slightly darker text for paragraphs */
+  color: #666; 
 }
 
-/* Wallet.css */
+/* Wallet */
 
 .wallet-container {
   width: 100%;
@@ -709,7 +708,7 @@ button:disabled {
 }
 .donation-container {
   padding: 20px;
-  background-color: #fff0f6; /* Light pink background */
+  background-color: #fff0f6; 
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   max-width: 1200px;
@@ -717,20 +716,20 @@ button:disabled {
 }
 
 h2 {
-  color: #ff007f; /* Pink color for headers */
+  color: #ff007f;
   margin-bottom: 20px;
 }
 
 .balance {
   font-size: 1.2em;
-  color: #ff007f; /* Pink color for balance */
+  color: #ff007f;
   margin-bottom: 15px;
 }
 
 .donation-input {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ff007f; /* Pink border */
+  border: 1px solid #ff007f; 
   border-radius: 4px;
   margin-bottom: 20px;
 }
@@ -744,18 +743,18 @@ h2 {
 .campaign-card {
   background-color: #fff;
   padding: 20px;
-  border: 1px solid #ff007f; /* Pink border */
+  border: 1px solid #ff007f; 
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
 .campaign-card h3 {
-  color: #ff007f; /* Pink color for campaign titles */
+  color: #ff007f; 
 }
 
 .donate-button {
-  background-color: #ff007f; /* Pink background */
+  background-color: #ff007f; 
   color: #fff;
   border: none;
   padding: 10px 20px;
@@ -765,6 +764,6 @@ h2 {
   margin-top: 10px;
 
   &:hover {
-      background-color: #e6007e; /* Darker pink on hover */
+      background-color: #e6007e; 
   }
 }
