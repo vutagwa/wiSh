@@ -767,3 +767,53 @@ h2 {
       background-color: #e6007e; 
   }
 }
+/* authentication */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+input,
+select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+input[type="text"],
+input[type="password"] {
+  background-color: #fff;
+}
+
+button {
+  background-color: #ff66b2; /* Pink color */
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #ff3385; /* Darker pink color */
+}
+
+.error {
+  color: #ff4d4d; /* Red color for errors */
+  margin-top: 10px;
+}

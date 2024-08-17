@@ -54,7 +54,7 @@ const UserDashboard = () => {
             <Route path="/communityHub" element={<CommunityHub />} />
             <Route path="/CaseReporting" element={<CaseReportingForm />} />
             <Route path="/Wallet" element={<Wallet />} />
-
+            <Route path="/" element={<Home />} />
           </Routes>
         </main>
       </div>

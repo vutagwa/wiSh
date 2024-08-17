@@ -2,16 +2,26 @@ import React, { useState } from 'react';
 import { HttpAgent, Actor } from '@dfinity/agent';
 import { AuthClient } from '@dfinity/auth-client';
 //import { idlFactory } from '../../../declarations/UserManager';
+;
 
 const RegistrationPage = () => {
     const [username, setUsername] = useState('');
     const [role, setRole] = useState('user'); 
     const [passkey, setPasskey] = useState('');
     const [error, setError] = useState('');
+    const [authClient, setAuthClient] = useState(null);
+
+    const initializeAuthClient = async () => {
+        const client = await AuthClient.create();
+        setAuthClient(client);
+        return client;
+    };
 
     const handleRegister = async () => {
-        const client = await AuthClient.create();
-        const agent = new HttpAgent({ identity: client.getIdentity() });
+        if (!authClient) {
+            await initializeAuthClient();
+        }
+        const agent = new HttpAgent({ identity: authClient.getIdentity() });
         const userManager = Actor.createActor(idlFactory, {
             agent,
             canisterId: 'uy3uz-syaaa-aaaab-qadka-cai'
@@ -26,7 +36,7 @@ const RegistrationPage = () => {
     };
 
     return (
-        <div>
+        <div className="container">
             <input
                 type="text"
                 placeholder="Username"
@@ -44,7 +54,7 @@ const RegistrationPage = () => {
                 onChange={(e) => setPasskey(e.target.value)}
             />
             <button onClick={handleRegister}>Register</button>
-            {error && <div>{error}</div>}
+            {error && <div className="error">{error}</div>}
         </div>
     );
 };

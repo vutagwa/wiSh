@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Calendar } from 'react-calendar';
 import { HttpAgent } from '@dfinity/agent';
-import { Actor } from '@dfinity/agent'; 
 import { idlFactory, canisterId } from '../../dfx_generates/report_case';
 
 // Initialize the HttpAgent
@@ -10,9 +9,12 @@ const agent = new HttpAgent();
 // Create an actor instance, adapting to the API version
 let reportCaseActor;
 try {
+    // Check if createActor method exists
     if (typeof Actor.createActor === 'function') {
+        // New API
         reportCaseActor = Actor.createActor(idlFactory, { agent, canisterId });
     } else {
+        // Old API or alternative approach
         reportCaseActor = Actor.createActor(idlFactory, {
             agent,
             canisterId,
@@ -22,6 +24,7 @@ try {
     console.error('Error creating actor:', err);
 }
 
+// Ensure the agent is connected to the network
 (async () => {
     try {
         await agent.fetchRootKey();
@@ -38,7 +41,6 @@ const CaseReportingForm = () => {
     const [description, setDescription] = useState('');
     const [victimName, setVictimName] = useState('');
     const [offenderPicture, setOffenderPicture] = useState(null);
-    const [wishCoins, setWishCoins] = useState(0); 
 
     const handleDateChange = (newDate) => {
         setDate(newDate);
@@ -64,10 +66,6 @@ const CaseReportingForm = () => {
                 victimName || null,
                 pictureBlob || null
             );
-
-            // Update Wish Coins after successful report submission
-            setWishCoins(wishCoins + 10);
-
             alert('Report submitted successfully');
         } catch (err) {
             console.error('Failed to submit report:', err);
@@ -78,7 +76,6 @@ const CaseReportingForm = () => {
     return (
         <div className="case-reporting-form">
             <h2>Report a Crime</h2>
-            <p>💰: {wishCoins}</p> {/* Display Wish Coins */}
             <form onSubmit={handleSubmit}>
                 <label>
                     Location:

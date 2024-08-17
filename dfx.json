@@ -9,7 +9,7 @@
       "type": "motoko"
     },
     "user_manager": {
-      "main": "src/wiSh_backend/UserManager.mo",
+      "main": "src/wiSh_backend/main.mo",
       "type": "motoko"
     },
     "wiSh_frontend": {

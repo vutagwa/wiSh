@@ -1,17 +1,20 @@
-import Debug "mo:base/Debug";
-import HashMap "mo:base/HashMap";
-
 actor UserManager {
     type User = {
         role: Text;
         passkey: Text;
     };
 
-    stable var users: HashMap.Text<User> = HashMap.init();
+    stable var users: HashMap<Text, User> = HashMap<Text, User>();
 
-    // Register a user
+    // Initialize the actor with predefined users
+    shared({caller}) func init() {
+        users := HashMap.put(users, "admin", {role = "admin", passkey = "adminpass"});
+        users := HashMap.put(users, "marion", {role = "user", passkey = "1121"});
+        users := HashMap.put(users, "meriel", {role = "admin", passkey = "1111"});
+    };
+
     public func register(username: Text, role: Text, passkey: Text) : async Text {
-        if (HashMap.contains(users, username)) {
+        if (await HashMap.contains(users, username)) {
             return "User already registered.";
         };
 
@@ -20,13 +23,12 @@ actor UserManager {
             passkey = passkey;
         };
 
-        users := HashMap.put(users, username, user);
+        users := await HashMap.put(users, username, user);
         return "Registration successful.";
     };
 
-    // Login a user
     public func login(username: Text, passkey: Text) : async Text {
-        switch (HashMap.get(users, username)) {
+        switch (await HashMap.get(users, username)) {
             case (null) { return "User not found."; };
             case (?user) {
                 if (user.passkey != passkey) {
@@ -38,8 +40,7 @@ actor UserManager {
         }
     };
 
-    // Utility function to check if a user exists
     public query func userExists(username: Text) : async Bool {
-        return HashMap.contains(users, username);
+        return await HashMap.contains(users, username);
     }
 };

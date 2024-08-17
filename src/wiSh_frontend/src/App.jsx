@@ -4,6 +4,8 @@ import LoginPage from './components/pages/LoginPage';
 import RegistrationPage from './components/pages/RegistrationPage';
 import AdminDashboard from './components/pages/AdminDashboard';
 import UserDashboard from './components/pages/UserDashboard';
+import CommunityHub from './components/pages/communityHub';
+import CaseReportingForm from './components/pages/CaseReporting';
 
 function App() {
     return (
@@ -13,7 +15,7 @@ function App() {
                 <Route path="/register" element={<RegistrationPage />} />
                 <Route path="/admin-dashboard" element={<AdminDashboard />} />
                 <Route path="/user-dashboard" element={<UserDashboard />} />
-                <Route path="/" element={<LoginPage />} />
+                <Route path="/" element={<RegistrationPage />} />
             </Routes>
         </Router>
     );

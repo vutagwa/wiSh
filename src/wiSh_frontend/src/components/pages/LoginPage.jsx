@@ -12,6 +12,7 @@ const LoginPage = () => {
     const initializeAuthClient = async () => {
         const client = await AuthClient.create();
         setAuthClient(client);
+        return client;
     };
 
     const handleLogin = async () => {
@@ -39,7 +40,7 @@ const LoginPage = () => {
     };
 
     return (
-        <div>
+        <div className="container">
             <input
                 type="text"
                 placeholder="Username"
@@ -53,7 +54,7 @@ const LoginPage = () => {
                 onChange={(e) => setPasskey(e.target.value)}
             />
             <button onClick={handleLogin}>Login</button>
-            {error && <div>{error}</div>}
+            {error && <div className="error">{error}</div>}
         </div>
     );
 };
