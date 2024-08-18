@@ -815,3 +815,74 @@ button:hover {
   color: #ff4d4d; /* Red color for errors */
   margin-top: 10px;
 }
+/* SettingsPage.css */
+.settings-page {
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.settings-page h1 {
+  margin-bottom: 30px;
+  color: #343a40;
+  font-size: 2rem;
+}
+
+.settings-page .form-group {
+  margin-bottom: 20px;
+}
+
+.settings-page .form-control {
+  border-radius: 4px;
+  padding: 10px;
+  border: 1px solid #ced4da;
+}
+
+.settings-page .form-check-input {
+  margin-right: 10px;
+}
+
+.settings-page .btn-primary {
+  background-color: #e06ae0;
+  border-color: #e06ae0;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.settings-page .btn-primary:hover {
+  background-color: #e799f1;
+  border-color: #e799f1;
+}
+
+.settings-page .card {
+  margin-bottom: 20px;
+}
+
+.settings-page .card-header {
+  background-color: #e9ecef;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.settings-page .card-body {
+  padding: 20px;
+}
+
+.settings-page .list-group-item {
+  border-radius: 0;
+  margin-bottom: -1px;
+}
+
+.settings-page .list-group-item.active {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.settings-page .list-group-item:hover {
+  background-color: #f1f1f1;
+}
