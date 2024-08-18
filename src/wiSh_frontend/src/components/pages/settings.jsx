@@ -151,7 +151,6 @@ const SettingsPage = () => {
                             onChange={handleFileChange}
                           />
                         </div>
-                        <small>For best results, use an image of size 180x180 pixels or less.</small>
                       </div>
                     </div>
                   </div>
