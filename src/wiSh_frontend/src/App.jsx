@@ -6,6 +6,7 @@ import AdminDashboard from './components/pages/AdminDashboard';
 import UserDashboard from './components/pages/UserDashboard';
 import CommunityHub from './components/pages/communityHub';
 import CaseReportingForm from './components/pages/CaseReporting';
+import SettingsPage from './components/pages/settings';
 
 function App() {
     return (
