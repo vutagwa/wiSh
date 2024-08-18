@@ -9,15 +9,19 @@ import CaseReportingForm from './components/pages/CaseReporting';
 
 function App() {
     return (
-        <Router>
-            <Routes>
+        /*<Router>
+            /*<Routes>
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/register" element={<RegistrationPage />} />
                 <Route path="/admin-dashboard" element={<AdminDashboard />} />
                 <Route path="/user-dashboard" element={<UserDashboard />} />
-                <Route path="/" element={<RegistrationPage />} />
+                <Route path="/" element={<LoginPage
+                 />} />
             </Routes>
-        </Router>
+        </Router>*/
+        <>
+        <UserDashboard/>
+        </>
     );
 }
 

@@ -8,6 +8,7 @@ import ManageUsers from './admin/ManageUsers';
 import ManageContent from './admin/ManageContent';
 import ManageCases from './admin/ManageCases';
 import ManageEvents from './admin/ManageEvents';
+import SettingsPage from './settings';
 
 const AdminDashboard = () => {
   return (
@@ -48,7 +49,7 @@ const AdminDashboard = () => {
           </ul>
           <ul className="bottom-links">
             <li>
-              <Link to="/admin/settings">
+              <Link to="/SettingsPage">
                 <FontAwesomeIcon icon={faCog} />
                 <span className="link-text">Settings</span>
               </Link>
@@ -68,6 +69,8 @@ const AdminDashboard = () => {
             <Route path="/admin/manageContent" element={<ManageContent />} />
             <Route path="/admin/manageCases" element={<ManageCases />} />
             <Route path="/admin/manageEvents" element={<ManageEvents />} />
+            <Route path="/SettingsPage" element={<SettingsPage />} />
+
             <Route path="/" element={<Home />} />
           </Routes>
         </main>

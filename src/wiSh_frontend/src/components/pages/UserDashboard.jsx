@@ -8,6 +8,7 @@ import CommunityHub from './communityHub';
 import CaseReportingForm from './CaseReporting';
 import DonationCampaigns from './DonationHub';
 import Wallet from './wallet';
+import SettingsPage from './settings';
 
 const UserDashboard = () => {
   return (
@@ -46,6 +47,20 @@ const UserDashboard = () => {
               </Link>
             </li>
           </ul>
+          <ul className="bottom-links">
+            <li>
+              <Link to="/SettingsPage">
+                <FontAwesomeIcon icon={faCog} />
+                <span className="link-text">Settings</span>
+              </Link>
+            </li>
+            <li>
+              <Link to="/admin/privacy">
+                <FontAwesomeIcon icon={faLock} />
+                <span className="link-text">Privacy</span>
+              </Link>
+            </li>
+          </ul>
         </nav>
         <main className="content">
           <Routes>
@@ -54,6 +69,7 @@ const UserDashboard = () => {
             <Route path="/communityHub" element={<CommunityHub />} />
             <Route path="/CaseReporting" element={<CaseReportingForm />} />
             <Route path="/Wallet" element={<Wallet />} />
+            <Route path="/SettingsPage" element={<SettingsPage />} />
             <Route path="/" element={<Home />} />
           </Routes>
         </main>
