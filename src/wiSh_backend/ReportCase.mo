@@ -1,28 +1,28 @@
+import Debug "mo:base/Debug";
+import Map "mo:base/Map";
+import Array "mo:base/Array";
+
+type CrimeReport = {
+    id: Int;
+    location: Text;
+    date: Int;
+    incidentType: Text;
+    description: Text;
+    victimName: ?Text;
+    offenderPicture: ?Blob;
+};
+
+type Transaction = {
+    type: Text;
+    amount: Int;
+    recipient: ?Text;
+};
+
 actor ReportCase {
+    private var reports : Map.Int<CrimeReport> = Map.empty();
+    private var wishCoinsBalance : Int = 0;
+    private var transactionHistory : [Transaction] = [];
 
-    // Define types
-    type CrimeReport = {
-        id: Int;
-        location: Text;
-        date: Int;
-        incidentType: Text;
-        description: Text;
-        victimName: ?Text;
-        offenderPicture: ?Blob;
-    };
-
-    type Transaction = {
-        type: Text;
-        amount: Int;
-        recipient: ?Text;
-    };
-
-    // Initialize variables
-    let reports : Map.Int<CrimeReport> = Map.empty();
-    var wishCoinsBalance : Int = 0;
-    var transactionHistory : [Transaction] = [];
-
-    // Public functions
     public func addReport(location: Text, date: Int, incidentType: Text, description: Text, victimName: ?Text, offenderPicture: ?Blob) : async Int {
         let reportId = reports.size();
         reports.put(reportId, {

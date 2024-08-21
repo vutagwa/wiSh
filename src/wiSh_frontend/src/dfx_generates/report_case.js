@@ -1,7 +1,7 @@
 import { Actor, HttpAgent } from'@dfinity/agent';
 import { Principal } from'@dfinity/principal';
 
-export const canisterId = Principal.fromText('22w4c-cyaaa-aaaab-qacka-cai');
+export const canisterId = Principal.fromText('3l4c5-2qaaa-aaaab-qacpq-cai');
 
 export const idlFactory = ({ Actor, HttpAgent }) => Actor.createActor(
   {

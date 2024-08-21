@@ -8,7 +8,7 @@
       "main": "src/wiSh_backend/Wallet.mo",
       "type": "motoko"
     },
-    "user_manager": {
+    "main": {
       "main": "src/wiSh_backend/main.mo",
       "type": "motoko"
     },
