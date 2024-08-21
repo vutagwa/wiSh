@@ -1,59 +1,76 @@
-# `wiSh`
+# wiSh: A DApp for Community Engagement and Awareness
+## Overview
+wiSh is a decentralized application (DApp) designed to leverage meme coin-like features to incentivize awareness, community engagement, donation, and reporting on crucial social issues, such as femicide. By integrating blockchain technology and community-driven rewards, wiSh aims to create a platform where users are motivated to contribute to societal causes and engage in meaningful actions.
 
-Welcome to your new `wiSh` project and to the Internet Computer development community. By default, creating a new project adds this README and some template files to your project directory. You can edit these template files to customize your project and to include your own code to speed up the development cycle.
+## Features
+Community Engagement: Participate in discussions and activities related to critical social issues.
+Reporting System: Report and track incidents of concern with an intuitive crime reporting feature.
+Donation Hub: Donate to various campaigns and initiatives directly from the platform.
+Wallet Integration: Manage and track your WishCoins balance and transactions.
+Admin Dashboard: For administrators to manage users, content, cases, and events efficiently.
+User Dashboard: Personalized dashboard for users to engage with the platform and access various features.
+## Architecture
+wiSh is built using a combination of React for the frontend and Motoko for the backend canisters deployed on the Internet Computer. The project is structured as follows:
 
-To get started, you might want to explore the project directory structure and the default configuration file. Working with this project in your development environment will not affect any production deployment or identity tokens.
+### Frontend
+React Components: Provides a responsive and interactive user interface.
+AdminDashboard: Admin interface for managing users, content, and more.
+UserDashboard: User interface for accessing personal features and functionalities.
+### Backend
+Canisters:
+ReportCase: Handles crime reporting and management of WishCoins.
+Wallet: Manages user wallets, transactions, and donations.
+UserManager: Manages user registration, login, and role-based access.
+## Getting Started
+### Prerequisites
+Node.js and npm: Ensure you have Node.js (v14.x or later) and npm installed.
+Dfinity SDK: Install the Dfinity SDK to interact with the Internet Computer.
+## Installation
+Clone the Repository:
 
-To learn more before you start working with `wiSh`, see the following documentation available online:
+bash
+Copy code
+git clone https://github.com/your-repository/wiSh.git
+cd wiSh
+Install Dependencies:
 
-- [Quick Start](https://internetcomputer.org/docs/current/developer-docs/setup/deploy-locally)
-- [SDK Developer Tools](https://internetcomputer.org/docs/current/developer-docs/setup/install)
-- [Motoko Programming Language Guide](https://internetcomputer.org/docs/current/motoko/main/motoko)
-- [Motoko Language Quick Reference](https://internetcomputer.org/docs/current/motoko/main/language-manual)
+bash
+Copy code
+cd src/wiSh_frontend
+npm install
+Set Up the Backend:
 
-If you want to start working on your project right away, you might want to try the following commands:
+Navigate to src/wiSh_backend and install dependencies:
 
-```bash
-cd wiSh/
-dfx help
-dfx canister --help
-```
+bash
+Copy code
+cd ../wiSh_backend
+Build and Deploy Canisters:
 
-## Running the project locally
+Make sure you are in the root of your project and run:
 
-If you want to test your project locally, you can use the following commands:
-
-```bash
-# Starts the replica, running in the background
-dfx start --background
-
-# Deploys your canisters to the replica and generates your candid interface
+bash
+Copy code
+dfx build
 dfx deploy
-```
+Run the Frontend:
 
-Once the job completes, your application will be available at `http://localhost:4943?canisterId={asset_canister_id}`.
+In the wiSh_frontend directory, start the development server:
 
-If you have made changes to your backend canister, you can generate a new candid interface with
-
-```bash
-npm run generate
-```
-
-at any time. This is recommended before starting the frontend development server, and will be run automatically any time you run `dfx deploy`.
-
-If you are making frontend changes, you can start a development server with
-
-```bash
+bash
+Copy code
 npm start
-```
+Usage
+Admin Access: Access the Admin Dashboard at /admin/home to manage platform content and users.
+User Access: Access the User Dashboard at /Home to engage with community features and manage your wallet.
+Contributing
+Contributions are welcome! To contribute:
 
-Which will start a server at `http://localhost:8080`, proxying API requests to the replica at port 4943.
+Fork the repository.
+Create a new branch for your feature or fix.
+Commit your changes.
+Push to your forked repository.
+Open a pull request.
+## License
+wiSh is licensed under the MIT License.
 
-### Note on frontend environment variables
-
-If you are hosting frontend code somewhere without using DFX, you may need to make one of the following adjustments to ensure your project does not fetch the root key in production:
-
-- set`DFX_NETWORK` to `ic` if you are using Webpack
-- use your own preferred method to replace `process.env.DFX_NETWORK` in the autogenerated declarations
-  - Setting `canisters -> {asset_canister_id} -> declarations -> env_override to a string` in `dfx.json` will replace `process.env.DFX_NETWORK` with the string in the autogenerated declarations
-- Write your own `createActor` constructor
