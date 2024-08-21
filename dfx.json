@@ -2,15 +2,23 @@
   "canisters": {
     "wiSh_backend": {
       "main": "src/wiSh_backend/ReportCase.mo",
-      "type": "motoko"
+      "type": "motoko",
+      "controllers": ["krxg5-odxgv-vns2a-5fz6n-c74by-ijwqu-nneu4-eroaz-6qv4s-4ymci-7qe"]
     },
     "wallet": {
       "main": "src/wiSh_backend/Wallet.mo",
-      "type": "motoko"
+      "type": "motoko",
+      "controllers": ["krxg5-odxgv-vns2a-5fz6n-c74by-ijwqu-nneu4-eroaz-6qv4s-4ymci-7qe"]
     },
-    "main": {
-      "main": "src/wiSh_backend/main.mo",
-      "type": "motoko"
+    "auth": {
+      "main": "src/wiSh_backend/auth.mo",
+      "type": "motoko",
+      "controllers": ["krxg5-odxgv-vns2a-5fz6n-c74by-ijwqu-nneu4-eroaz-6qv4s-4ymci-7qe"]
+    },
+    "user_manager": {
+      "main": "src/user_manager/main.mo",
+      "type": "motoko",
+      "controllers": ["krxg5-odxgv-vns2a-5fz6n-c74by-ijwqu-nneu4-eroaz-6qv4s-4ymci-7qe"]
     },
     "wiSh_frontend": {
       "dependencies": [
