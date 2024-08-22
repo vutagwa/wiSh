@@ -4,6 +4,10 @@
       "main": "src/wish_backend/main.mo",
       "type": "motoko"
     },
+    "internet_identity" : {
+      "type": "pull",
+      "id": "rdmx6-jaaaa-aaaaa-aaadq-cai"
+    },
     "wish_frontend": {
       "dependencies": [
         "wish_backend"
