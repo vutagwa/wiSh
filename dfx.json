@@ -4,16 +4,26 @@
       "main": "src/wish_backend/main.mo",
       "type": "motoko"
     },
-    "internet_identity" : {
+    "internet_identity": {
       "type": "pull",
       "id": "rdmx6-jaaaa-aaaaa-aaadq-cai"
     },
+    "case_reporting": {
+      "main": "src/wish_backend/CaseReporting.mo",
+      "type": "motoko"
+    },
+    "community_hub": {
+      "main": "src/wish_backend/communityHub.mo",
+      "type": "motoko"
+    },
     "wish_frontend": {
       "dependencies": [
-        "wish_backend"
+        "wish_backend",
+        "case_reporting",
+        "community_hub"
       ],
       "source": [
-        "src/wish_frontend/dist"
+        "src/wish_frontend"
       ],
       "type": "assets",
       "workspace": "wish_frontend"

@@ -1,0 +1,42 @@
+import Nat "mo:base/Nat";
+import Time "mo:base/Time";
+import Array "mo:base/Array";
+import Blob "mo:base/Blob";
+
+actor CaseReportingSystem {
+    type Case = {
+        location: Text;
+        date: Time.Time;
+        description: Text;
+        offenderPic: ?Blob;
+    };
+
+    var cases: [Case] = [];
+    var tokenBalance: Nat = 0;
+
+    // Function to submit a case
+    public func submitCase(location: Text, date: Time.Time, description: Text, offenderPic: ?Blob) : async Text {
+        let newCase: Case = {
+            location = location;
+            date = date;
+            description = description;
+            offenderPic = offenderPic;
+        };
+        cases := Array.append(cases, [newCase]);
+
+        // Reward user with tokens (placeholder)
+        tokenBalance += 10;
+
+        return "Case submitted successfully!";
+    };
+
+    // Function to get the list of reported cases
+    public query func getCases() : async [Case] {
+        return cases;
+    };
+
+    // Function to get the current token balance
+    public query func getTokenBalance() : async Nat {
+        return tokenBalance;
+    };
+};
