@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { AuthClient } from '@dfinity/auth-client';
 import { HttpAgent } from '@dfinity/agent';
-import { createActor, wish_backend } from 'src/declarations/wish_frontend';
+import { createActor, wish_backend } from '../../../declarations/wish_backend';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Login = () => {
