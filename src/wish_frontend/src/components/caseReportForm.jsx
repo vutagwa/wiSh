@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import caseReportingActor from '../../../dfx';
+import { caseReportingActor } from '../../../dfx';
 
 const CaseReportForm = () => {
   const [location, setLocation] = useState('');

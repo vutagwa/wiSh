@@ -16,6 +16,14 @@
       "main": "src/wish_backend/communityHub.mo",
       "type": "motoko"
     },
+    "Donation_hub": {
+      "main": "src/wish_backend/DonationHub.mo",
+      "type": "motoko"
+    },
+    "Wallet": {
+      "main": "src/wish_backend/Wallet.mo",
+      "type": "motoko"
+    },
     "wish_frontend": {
       "dependencies": [
         "wish_backend",

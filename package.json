@@ -18,7 +18,9 @@
   "dependencies": {
     "@dfinity/agent": "^2.0.0",
     "@dfinity/auth-client": "^2.0.0",
+    "@dfinity/authentication": "^0.14.1",
     "@dfinity/candid": "^2.0.0",
+    "@dfinity/identity": "^2.0.0",
     "@dfinity/principal": "^2.0.0",
     "bootstrap": "^5.3.3"
   }

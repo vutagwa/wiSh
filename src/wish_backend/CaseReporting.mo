@@ -1,7 +1,6 @@
-import Nat "mo:base/Nat";
 import Time "mo:base/Time";
 import Array "mo:base/Array";
-import Blob "mo:base/Blob";
+
 
 actor CaseReportingSystem {
     type Case = {
@@ -24,8 +23,8 @@ actor CaseReportingSystem {
         };
         cases := Array.append(cases, [newCase]);
 
-        // Reward user with tokens (placeholder)
-        tokenBalance += 10;
+        // Reward user with tokens
+        tokenBalance += 156; // Updated to reflect successful case report
 
         return "Case submitted successfully!";
     };
