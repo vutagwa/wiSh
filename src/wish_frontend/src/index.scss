@@ -1,21 +1,23 @@
 /* Global styles */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
 }
 /* landing page */
+/* General styles for the page */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
 }
 
-.landing-page {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+html {
+  scroll-behavior: smooth;
 }
 
+/* Header styling */
 .header {
   display: flex;
   justify-content: space-between;
@@ -23,11 +25,40 @@ body {
   padding: 1rem 2rem;
   background-color: #333;
   color: #fff;
+  position: relative; /* Ensure the header is positioned correctly */
+  z-index: 1000; /* Ensure the header stays on top of other content */
 }
 
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
+}
+
+.navbar {
+  flex-grow: 1; /* Make the navbar take available space */
+  display: flex;
+  justify-content: center; /* Center the navbar items */
+}
+
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navbar li {
+  margin: 0 15px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #fff; /* Ensure links are visible against dark background */
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  color: #ff9900; /* Change color on hover */
 }
 
 .login-button {
@@ -43,13 +74,20 @@ body {
   background-color: #cc7a00;
 }
 
+/* Section styling */
+.landing-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .section {
   padding: 4rem 2rem;
   text-align: center;
 }
 
 .home {
-  background: url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
+  background: url('./components/assets/bg1.jpeg') no-repeat center center/cover;
   color: #fff;
   display: flex;
   align-items: center;
@@ -131,6 +169,7 @@ body {
   text-align: center;
   padding: 1rem;
 }
+
 /* App styles */
 .main-content {
   margin-left: 250px;

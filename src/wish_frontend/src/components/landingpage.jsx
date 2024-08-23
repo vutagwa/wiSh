@@ -1,16 +1,29 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const LandingPage = () => {
   return (
     <div className="landing-page">
       <header className="header">
-        <div className="logo">DappName</div>
-        <button className="login-button">Login</button>
+        <div className="logo"> 
+          <span className="fancy-font">Wish</span>
+        </div>
+        <nav className="navbar">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#demo">Product Demo</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+          </ul>
+        </nav>
+        <Link to="/login">
+          <button className="login-button">Login</button>
+        </Link>
       </header>
 
       <section id="home" className="section home">
         <div className="home-content">
-          <h1>Welcome to DappName</h1>
+          <h1>Welcome to <span className="fancy-font">Wish</span></h1>
           <p>Empowering you with the best decentralized experience.</p>
           <button className="cta-button">Get Started</button>
         </div>
@@ -49,7 +62,7 @@ const LandingPage = () => {
       </section>
 
       <footer className="footer">
-        <p>&copy; 2024 DappName. All rights reserved.</p>
+        <p>&copy; 2024 happy fools. All rights reserved.</p>
       </footer>
     </div>
   );
