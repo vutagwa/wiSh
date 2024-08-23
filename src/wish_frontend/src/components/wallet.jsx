@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import walletActor from '../../../dfx/index4'; // Adjust the import path as needed
+import walletActor from '../../../dfx/index4';
 
 // Component to display the balance
 const BalanceDisplay = ({ user }) => {

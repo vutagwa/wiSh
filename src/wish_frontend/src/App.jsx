@@ -1,16 +1,17 @@
-import { useState } from 'react';
-import { wish_backend } from 'declarations/wish_backend';
-import Login from './components/Login';
-import CaseReportForm from './components/caseReportForm';
-import CommunityHub from './components/communityHub';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import LandingPage from './components/landingpage'
+import UserDashboard from './components/userDahboard'; 
 
-function App() {
-  
+const App = () => {
   return (
-    <>
-    <CaseReportForm/>
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/dashboard" element={<UserDashboard />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;

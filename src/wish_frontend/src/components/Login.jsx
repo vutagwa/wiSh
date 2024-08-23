@@ -75,7 +75,7 @@ const Login = () => {
     <div className="container">
       <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">Motoko-Tutorial</a>
+          <a className="navbar-brand" href="#">Welcome</a>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -94,10 +94,9 @@ const Login = () => {
           <div id="not_loggedin" className="row">
             <div className="col-md-6">
               <div className="feature-box">
-                <h1>A simple motoko website</h1>
+                <h1>Welcome</h1>
                 <p>
-                  This is going to be a simple motoko website that will show you how to link the frontend
-                  with the backend and add a simple internet identity authentication
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi obcaecati porro quibusdam? Beatae amet in distinctio omnis libero dolore enim quidem minima. Aperiam, modi provident cumque sapiente numquam voluptatibus illum!
                 </p>
                 <button className="btn btn-outline-primary" onClick={handleLogin}>Log in</button>
               </div>

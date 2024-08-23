@@ -1,18 +1,21 @@
+// UserDashboard.js
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Home from './components/Home';
-import Wallet from './components/Wallet';
-import CaseReport from './components/CaseReport';
-import CommunityHub from './components/CommunityHub';
-import Settings from './components/Settings';
-import Mode from './components/Mode';
+import Home from './Dashboard/Home';
+import Wallet from './wallet';
+import CaseReport from './caseReportForm';
+import CommunityHub from './communityHub';
+import Settings from './Dashboard/settings';
+import Mode from './Dashboard/mode';
+import Sidebar from './Dashboard/sidebar';
 
 const UserDashboard = () => {
   const user = 'exampleUser';
 
   return (
     <Router>
-      <div>
+      <Sidebar />
+      <div className="main-content">
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/wallet" render={() => <Wallet user={user} />} />

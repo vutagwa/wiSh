@@ -22,6 +22,8 @@
     "@dfinity/candid": "^2.0.0",
     "@dfinity/identity": "^2.0.0",
     "@dfinity/principal": "^2.0.0",
-    "bootstrap": "^5.3.3"
+    "bootstrap": "^5.3.3",
+    "rollup-plugin-ignore": "^1.0.10",
+    "styled-components": "^6.1.12"
   }
 }
