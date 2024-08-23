@@ -25,7 +25,9 @@ const LandingPage = () => {
         <div className="home-content">
           <h1>Welcome to <span className="fancy-font">Wish</span></h1>
           <p>Empowering you with the best decentralized experience.</p>
-          <button className="cta-button">Get Started</button>
+          <Link to="/userDashboard">
+            <button className="cta-button">Get Started</button>
+          </Link>
         </div>
       </section>
 
