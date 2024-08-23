@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import walletActor from '../../../dfx/index4';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './Wallet.css'; // Import the custom CSS file
 
 const BalanceDisplay = ({ user }) => {
   const [balance, setBalance] = useState(0);
