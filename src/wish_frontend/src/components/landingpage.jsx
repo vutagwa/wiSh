@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 const LandingPage = () => {
   return (
     <div className="landing-page">
-      <header className="header">
-        <div className="logo"> 
+      <header className="header2">
+        <div className="logo">
           <span className="fancy-font">Wish</span>
         </div>
         <nav className="navbar">
@@ -23,10 +23,10 @@ const LandingPage = () => {
 
       <section id="home" className="section home">
         <div className="home-content">
-          <h1>Welcome to <span className="fancy-font">Wish</span></h1>
+          <h1><span className="fancy-font">Welcome to Wish</span></h1>
           <p>Empowering you with the best decentralized experience.</p>
           <Link to="/userDashboard">
-            <button className="cta-button">Get Started</button>
+            <button className="cta-button">Get started</button>
           </Link>
         </div>
       </section>

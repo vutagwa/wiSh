@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Mode = () => {
   const [selectedMode, setSelectedMode] = useState('Light');
@@ -6,6 +6,10 @@ const Mode = () => {
   const handleChange = (e) => {
     setSelectedMode(e.target.value);
   };
+
+  useEffect(() => {
+    document.body.className = selectedMode.toLowerCase() + '-mode';
+  }, [selectedMode]);
 
   return (
     <div style={{ padding: '20px' }}>

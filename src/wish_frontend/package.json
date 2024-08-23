@@ -1,7 +1,7 @@
 {
   "name": "wish_frontend",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "setup": "npm i && dfx canister create wish_backend && dfx generate wish_backend && dfx deploy",

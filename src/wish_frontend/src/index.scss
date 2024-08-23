@@ -5,28 +5,20 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
-}
-/* landing page */
-/* General styles for the page */
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-}
-
-html {
   scroll-behavior: smooth;
 }
 
 /* Header styling */
-.header {
+.header2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
   background-color: #333;
   color: #fff;
-  position: relative; /* Ensure the header is positioned correctly */
-  z-index: 1000; /* Ensure the header stays on top of other content */
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
 }
 
 .logo {
@@ -35,9 +27,9 @@ html {
 }
 
 .navbar {
-  flex-grow: 1; /* Make the navbar take available space */
+  flex-grow: 1;
   display: flex;
-  justify-content: center; /* Center the navbar items */
+  justify-content: center;
 }
 
 .navbar ul {
@@ -53,12 +45,12 @@ html {
 
 .navbar a {
   text-decoration: none;
-  color: #fff; /* Ensure links are visible against dark background */
+  color: #fff;
   font-weight: bold;
 }
 
 .navbar a:hover {
-  color: #ff9900; /* Change color on hover */
+  color: #ff9900;
 }
 
 .login-button {
@@ -80,7 +72,11 @@ html {
   flex-direction: column;
   min-height: 100vh;
 }
-
+.fancy-font {
+  font-family: 'Pacifico', cursive;
+  font-size: 2em; 
+  color: #bb7e4f; 
+}
 .section {
   padding: 4rem 2rem;
   text-align: center;
@@ -178,16 +174,16 @@ html {
 }
 
 .container {
-  background: white;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
 }
+
 /* Sidebar styles */
 .sidebar {
   width: 250px;
   height: 100vh;
-  background-color: #333;
+  background-color: #b8a2ae;
   color: white;
   display: flex;
   flex-direction: column;
@@ -206,9 +202,10 @@ html {
 }
 
 .sidebar a:hover {
-  background-color: #444;
+  background-color: #e6a3a3;
   border-radius: 4px;
 }
+
 /* Login page styles */
 body {
   font-family: Arial, sans-serif;
@@ -227,7 +224,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: calc(100vh - 56px); 
+  min-height: calc(100vh - 56px);
   padding: 20px;
 }
 
@@ -291,6 +288,7 @@ img.img-fluid {
 .navbar-nav .nav-link {
   font-size: 1.1rem;
 }
+
 /* Wallet component styles */
 .wallet-container {
   max-width: 800px;
@@ -324,7 +322,7 @@ img.img-fluid {
   color: #dc3545;
 }
 
-/*case report*/
+/* Case report */
 .form-container {
   max-width: 600px;
   margin: 0 auto;
@@ -332,19 +330,19 @@ img.img-fluid {
   background-color: #f9f9f9;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  position: relative; /* Added for positioning token balance */
+  position: relative;
 }
 
-.token-balance {
+.header1 {
   position: absolute;
-  top: 10px;
-  left: 10px;
-  background-color: #007bff;
-  color: #fff;
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-size: 14px;
-  font-weight: bold;
+  background-color: #333131;
+  height: 40px;
+  padding: 5px;
+  top: -15px;
+  right: -26px;
+  font-size: 16px;
+  color: #d6ae7e;
+
 }
 
 .form-container h2 {
@@ -379,7 +377,7 @@ img.img-fluid {
   display: block;
   width: 100%;
   padding: 10px;
-  background-color: #007bff;
+  background-color: #ebb7a2;
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -388,7 +386,7 @@ img.img-fluid {
 }
 
 .form-container button:hover {
-  background-color: #0056b3;
+  background-color: #f3789d;
 }
 
 .form-container .file-upload {
@@ -400,7 +398,210 @@ img.img-fluid {
   margin-left: 10px;
 }
 
-@media (max-width: 768px) {
+/* Home */
+.homey {
+  color: #a87474;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 20px; 
+}
+
+.home-content {
+  text-align: center;
+  max-width: 800px;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.cardy {
+  background: rgba(228, 212, 212, 0.7);
+  border-radius: 8px;
+  color: rgb(241, 131, 131);
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.card h2 {
+  margin-top: 0;
+}
+
+.card-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: #7e0a0a;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.card-link:hover {
+  background: #da9696;
+  color: #333;
+}
+
+/* CommunityHub styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 16px;
+  color: #d6ae7e;
+}
+
+.create-post-section {
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 1px solid #be9f78;
+  border-radius: 8px;
+  background-color: #fff9fb;
+}
+
+.create-post-section h2 {
+  margin-top: 0;
+  color: #c4a783;
+}
+
+.create-post-section form {
+  display: flex;
+  flex-direction: column;
+}
+
+.create-post-section label {
+  margin: 10px 0 5px;
+  color: #e2b379;
+}
+
+.create-post-section input,
+.create-post-section textarea {
+  padding: 8px;
+  border: 1px solid #947b5d;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.create-post-section button {
+  padding: 10px;
+  background-color: #d4bda1;
+  border: none;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.create-post-section button:hover {
+  background-color: #e07b00;
+}
+
+.posts-section {
+  margin-top: 20px;
+}
+
+.post {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ff8c00;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.post h2 {
+  margin-top: 0;
+  color: #ff8c00;
+}
+
+.post button {
+  margin-right: 10px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #ff8c00;
+  color: #fff;
+}
+
+.post button:hover {
+  background-color: #e07b00;
+}
+
+.error {
+  color: red;
+}
+
+.message {
+  color: green;
+}
+
+/* Dark mode */
+body.light-mode {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+body.dark-mode {
+  background-color: #000000;
+  color: #ffffff;
+}
+/*userdash*/
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+  .main-content {
+    margin-left: 200px;
+  }
+
+  .sidebar {
+    width: 200px;
+  }
+}
+
+@media (max-width: 992px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar {
+    margin-top: 10px;
+    justify-content: flex-start;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar li {
+    margin: 5px 0;
+  }
+
   .sidebar {
     width: 100%;
     height: auto;
@@ -409,5 +610,186 @@ img.img-fluid {
 
   .main-content {
     margin-left: 0;
+  }
+
+  .login-button {
+    display: block;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 1rem;
+  }
+
+  .navbar {
+    justify-content: center;
+  }
+
+  .home-content {
+    padding: 1rem;
+  }
+
+  .cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cardy {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .contact-form, .form-container, .feature-box {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .header {
+    font-size: 14px;
+  }
+
+  .navbar a {
+    font-size: 14px;
+  }
+
+  .cta-button, .login-button, .contact-form button {
+    padding: 0.5rem;
+    font-size: 0.875rem;
+  }
+
+  .contact-form input, .contact-form textarea,
+  .form-container input, .form-container textarea {
+    font-size: 0.875rem;
+  }
+}
+
+/* Sidebar and main-content styles */
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color: #333;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  transition: transform 0.3s ease;
+}
+
+.main-content {
+  margin-left: 250px; /* Adjust based on sidebar width */
+  padding: 20px;
+  min-height: 100vh;
+  background-color: #f4f4f4;
+  transition: margin-left 0.3s ease;
+}
+
+/* Mobile Styles */
+@media (max-width: 767px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    transform: translateX(-100%); /* Initially hide the sidebar */
+  }
+
+  .main-content {
+    margin-left: 0; /* Remove the margin on mobile */
+  }
+
+  /* Show sidebar on small screens when menu button is clicked (if applicable) */
+  .sidebar.open {
+    transform: translateX(0); /* Show the sidebar */
+  }
+}
+
+/* Tablet Styles */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .sidebar {
+    width: 200px; /* Slightly narrower sidebar on tablet */
+  }
+
+  .main-content {
+    margin-left: 200px; /* Adjust based on sidebar width */
+  }
+}
+
+/* Laptop Styles (default) */
+@media (min-width: 1025px) {
+  /* No additional styles needed, default layout applies */
+}
+
+/* Campaigns. */
+.campaign-card {
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  background: transparent;
+}
+
+.campaign-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Positioning the create campaign button */
+.create-campaign-container {
+  position: fixed; 
+  top: -9px; 
+  right: 59px; 
+  z-index: 1000; 
+
+}
+
+
+.create-campaign-button {
+  width: 80px;
+  height: 80px;
+  top: 10px;
+  font-size: 36px;
+  border-radius: 50%;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.create-campaign-button:hover {
+  background-color: #218838;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Styles */
+
+/* Mobile styles */
+@media (max-width: 576px) {
+  .create-campaign-button {
+    width: 60px;
+    height: 60px;
+    font-size: 28px;
+  }
+}
+
+/* Tablet styles */
+@media (min-width: 577px) and (max-width: 768px) {
+  .create-campaign-button {
+    width: 70px;
+    height: 70px;
+    font-size: 32px;
+  }
+}
+
+/* Laptop styles */
+@media (min-width: 769px) {
+  .create-campaign-button {
+    width: 80px;
+    height: 80px;
+    font-size: 36px;
   }
 }

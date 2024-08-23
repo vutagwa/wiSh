@@ -40,9 +40,9 @@ export default defineConfig({
       },
     ],
   },
-  env: {
-    CANISTER_ID_WALLET: dotenv.parsed.CANISTER_ID_WALLET,
-    DFX_NETWORK: dotenv.parsed.DFX_NETWORK,
-    CANISTER_ID_CASE_REPORTING: dotenv.parsed.case_reporting.local,
+  define: {
+    'process.env.CANISTER_ID_WALLET': JSON.stringify(process.env.CANISTER_ID_WALLET),
+    'process.env.DFX_NETWORK': JSON.stringify(process.env.DFX_NETWORK),
+    'process.env.CANISTER_ID_CASE_REPORTING': JSON.stringify(process.env.CANISTER_ID_CASE_REPORTING),
   },
 });

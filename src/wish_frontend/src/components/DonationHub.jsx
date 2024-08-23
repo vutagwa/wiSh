@@ -8,10 +8,14 @@ const Campaigns = ({ user }) => {
   const [error, setError] = useState('');
 
   useEffect(() => {
+    // Fetch campaigns from the backend or use dummy data
     setCampaigns([
-      { id: 1, name: 'femicide campaign', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. ' }, 
-      { id: 2, name: 'Child protection and saving', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.' },
-      // Add more campaigns here
+      { id: 1, name: 'Femicide Campaign', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.' }, 
+      { id: 2, name: 'Child Protection and Saving', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.' },
+      { id: 3, name: 'sucide prevention', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.' },
+      { id: 4, name: 'FGM rescue campaign', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.' },
+      { id: 5, name: 'Assult survivor campaigns', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.' },
+
     ]);
   }, []);
 
@@ -37,21 +41,35 @@ const Campaigns = ({ user }) => {
     }
   };
 
+  const handleCreateCampaign = () => {
+    // Handle the creation of a new campaign
+    alert('Feature to create new campaign coming soon!');
+  };
+
   return (
     <div className="container">
       <h2 className="my-4">Donation Campaigns</h2>
       {error && <p style={{ color: 'red' }}>{error}</p>}
-      {campaigns.map((campaign) => (
-        <div key={campaign.id} className="card mb-3">
-          <div className="card-body">
-            <h5 className="card-title">{campaign.name}</h5>
-            <p className="card-text">{campaign.description}</p>
-            <button className="btn btn-primary" onClick={() => handleDonate(campaign.id)}>
-              Donate
-            </button>
+      <div className="row">
+        {campaigns.map((campaign) => (
+          <div key={campaign.id} className="col-md-4 mb-4">
+            <div className="card campaign-card">
+              <div className="card-body">
+                <h5 className="card-title">{campaign.name}</h5>
+                <p className="card-text">{campaign.description}</p>
+                <button className="btn btn-primary" onClick={() => handleDonate(campaign.id)}>
+                  Donate
+                </button>
+              </div>
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
+      <div className="create-campaign-container">
+        <button className="btn btn-success create-campaign-button" onClick={handleCreateCampaign}>
+          +
+        </button>
+      </div>
     </div>
   );
 };

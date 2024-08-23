@@ -31,7 +31,7 @@ const CommunityHub = () => {
 
     fetchPosts();
     fetchTokenBalance();
-  }, []);
+  }, []); // Ensure the dependency array is empty
 
   const handleCreatePost = async (e) => {
     e.preventDefault();
@@ -76,12 +76,12 @@ const CommunityHub = () => {
   };
 
   return (
-    <div>
-      <div style={{ position: 'absolute', top: 10, right: 10 }}>
+    <div className="container">
+      <div className="header">
         <span>Token Balance: {tokenBalance} Wish Coins</span>
       </div>
 
-      <div style={{ margin: '20px' }}>
+      <div className="create-post-section">
         <h2>Create a Post</h2>
         <form onSubmit={handleCreatePost}>
           <div>
@@ -92,17 +92,17 @@ const CommunityHub = () => {
             <label>Content:</label>
             <textarea value={content} onChange={(e) => setContent(e.target.value)} />
           </div>
-          {error && <p style={{ color: 'red' }}>{error}</p>}
-          {message && <p>{message}</p>}
+          {error && <p className="error">{error}</p>}
+          {message && <p className="message">{message}</p>}
           <button type="submit">Create Post</button>
         </form>
       </div>
 
-      <div style={{ margin: '20px' }}>
+      <div className="posts-section">
         <h1>Community Posts</h1>
-        {error && <p style={{ color: 'red' }}>{error}</p>}
+        {error && <p className="error">{error}</p>}
         {posts.map(post => (
-          <div key={post.id} style={{ marginBottom: '10px', border: '1px solid #ccc', padding: '10px' }}>
+          <div key={post.id} className="post">
             <h2>{post.author}</h2>
             <p>{post.content}</p>
             <button onClick={() => handleUpvote(post.id)}>Upvote ({post.upvotes})</button>

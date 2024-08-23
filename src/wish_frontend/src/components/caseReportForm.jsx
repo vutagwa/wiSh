@@ -11,7 +11,6 @@ const CaseReportForm = () => {
   useEffect(() => {
     const fetchTokenBalance = async () => {
       try {
-        // Replace `getTokenBalance` with the actual method to get token balance
         const balance = await caseReportingActor.getTokenBalance();
         setTokenBalance(balance);
       } catch (error) {
@@ -34,8 +33,8 @@ const CaseReportForm = () => {
 
   return (
     <div className="form-container">
-      <div className="token-balance">
-        <span>Wish Coins: {tokenBalance}</span>
+       <div className="header1">
+        <span >Token Balance: {tokenBalance} Wish Coins</span>
       </div>
       <h2>Report a Case</h2>
       <form onSubmit={handleSubmit}>
