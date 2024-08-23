@@ -7,9 +7,22 @@ import { resolve } from 'path';
 dotenv.config({ path: '../../.env' });
 
 export default defineConfig({
-  // ...
+  plugins: [
+    react(),
+    {
+      name: 'vite-plugin-ignore-did',
+      transform(code, id) {
+        if (id.endsWith('.did')) {
+          return ''; // Ignore .did files
+        }
+        return null; // Let Vite handle other files normally
+      },
+    },
+  ],
   build: {
-    '.did': 'ignore',
+    rollupOptions: {
+      external: ['**/*.did'], // Ensure .did files are not included in the build
+    },
   },
   resolve: {
     alias: [
@@ -17,7 +30,6 @@ export default defineConfig({
         find: 'declarations',
         replacement: fileURLToPath(new URL('../declarations', import.meta.url)),
       },
-      
       {
         find: '@',
         replacement: resolve(__dirname, './src'),

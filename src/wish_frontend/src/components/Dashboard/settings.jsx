@@ -15,7 +15,7 @@ const Settings = ({ user }) => {
   };
 
   const handleSave = () => {
-    // Implement save functionality here
+    // to do save functionality
     alert('Settings saved!');
   };
 

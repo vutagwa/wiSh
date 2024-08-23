@@ -8,10 +8,9 @@ const Campaigns = ({ user }) => {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    // Example campaigns, replace with real data if needed
     setCampaigns([
-      { id: 1, name: 'Campaign 1', description: 'Description for Campaign 1' },
-      { id: 2, name: 'Campaign 2', description: 'Description for Campaign 2' },
+      { id: 1, name: 'femicide campaign', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. ' }, 
+      { id: 2, name: 'Child protection and saving', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.' },
       // Add more campaigns here
     ]);
   }, []);

@@ -22,7 +22,7 @@ const init = async () => {
         identityProvider:
           process.env.DFX_NETWORK === "ic"
             ? "https://identity.ic0.app"
-            : `http://localhost:4943`, // Use localhost for local development
+            : `http://localhost:4943`,
         onSuccess: resolve,
       });
     });

@@ -1,5 +1,5 @@
 import { Actor, HttpAgent } from '@dfinity/agent';
-import { idlFactory as communityHubIDL, canisterId as communityHubCanisterId } from '../declarations/community_hub/community_hub.did';
+import { idlFactory as communityHubIDL, canisterId as communityHubCanisterId } from '../declarations/community_hub';
 
 const agent = new HttpAgent();
 const communityHubActor = Actor.createActor(communityHubIDL, {

@@ -1,9 +1,8 @@
-// UserDashboard.js
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './Dashboard/Home';
 import Wallet from './wallet';
-import CaseReport from './caseReportForm';
+import CaseReportForm from './caseReportForm';
 import CommunityHub from './communityHub';
 import Settings from './Dashboard/settings';
 import Mode from './Dashboard/mode';
@@ -16,14 +15,14 @@ const UserDashboard = () => {
     <Router>
       <Sidebar />
       <div className="main-content">
-        <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/wallet" render={() => <Wallet user={user} />} />
-          <Route path="/case-report" render={() => <CaseReport user={user} />} />
-          <Route path="/community" component={CommunityHub} />
-          <Route path="/settings" render={() => <Settings user={user} />} />
-          <Route path="/mode" component={Mode} />
-        </Switch>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/wallet" element={<Wallet user={user} />} />
+          <Route path="/case-report" element={<CaseReportForm user={user} />} />
+          <Route path="/community" element={<CommunityHub />} />
+          <Route path="/settings" element={<Settings user={user} />} />
+          <Route path="/mode" element={<Mode />} />
+        </Routes>
       </div>
     </Router>
   );

@@ -24,7 +24,7 @@ actor CaseReportingSystem {
         cases := Array.append(cases, [newCase]);
 
         // Reward user with tokens
-        tokenBalance += 156; // Updated to reflect successful case report
+        tokenBalance += 156; 
 
         return "Case submitted successfully!";
     };

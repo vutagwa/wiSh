@@ -13,13 +13,13 @@ actor CommunityHub {
     };
 
     var posts: [Post] = [
-        { id = 0; author = "Alice"; content = "This is a demo post."; upvotes = 5; downvotes = 2; timestamp = Time.now() },
-        { id = 1; author = "Bob"; content = "Another demo post."; upvotes = 3; downvotes = 1; timestamp = Time.now() },
-        { id = 2; author = "Charlie"; content = "Yet another demo post."; upvotes = 10; downvotes = 0; timestamp = Time.now() }
+        { id = 0; author = "Marion"; content = "This is a demo post."; upvotes = 5; downvotes = 2; timestamp = Time.now() },
+        { id = 1; author = "Faith"; content = "Another demo post."; upvotes = 3; downvotes = 1; timestamp = Time.now() },
+        { id = 2; author = "Agnes"; content = "Yet another demo post."; upvotes = 10; downvotes = 0; timestamp = Time.now() }
     ];
 
     var tokenBalance: Nat = 0;
-    var postCounter: Nat = 3; // Initialize postCounter to 3 since we already have 3 demo posts
+    var postCounter: Nat = 3; 
 
     public func createPost(author: Text, content: Text) : async Text {
         let newPost: Post = {
