@@ -4,7 +4,7 @@ import { idlFactory as walletIDL, canisterId as walletCanisterId } from '../decl
 const agent = new HttpAgent();
 const walletActor = Actor.createActor(walletIDL, {
   agent,
-  canisterId: walletCanisterId,
+  canisterId: 'bd3sg-teaaa-aaaaa-qaaba-cai',
 });
 
 export default walletActor;

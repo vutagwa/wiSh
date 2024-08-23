@@ -40,4 +40,9 @@ export default defineConfig({
       },
     ],
   },
+  env: {
+    CANISTER_ID_WALLET: dotenv.parsed.CANISTER_ID_WALLET,
+    DFX_NETWORK: dotenv.parsed.DFX_NETWORK,
+    CANISTER_ID_CASE_REPORTING: dotenv.parsed.case_reporting.local,
+  },
 });

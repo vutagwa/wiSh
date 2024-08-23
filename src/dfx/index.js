@@ -4,7 +4,7 @@ import { idlFactory as caseReportingIDL, canisterId as caseReportingCanisterId }
 const agent = new HttpAgent();
 const caseReportingActor = Actor.createActor(caseReportingIDL, {
   agent,
-  canisterId: caseReportingCanisterId,
+  canisterId: 'be2us-64aaa-aaaaa-qaabq-cai',
 });
 
 export default caseReportingActor;

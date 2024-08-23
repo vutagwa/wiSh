@@ -4,7 +4,7 @@ import { idlFactory as communityHubIDL, canisterId as communityHubCanisterId } f
 const agent = new HttpAgent();
 const communityHubActor = Actor.createActor(communityHubIDL, {
   agent,
-  canisterId: communityHubCanisterId,
+  canisterId: 'br5f7-7uaaa-aaaaa-qaaca-cai',
 });
 
 export default communityHubActor;
