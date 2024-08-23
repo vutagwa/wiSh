@@ -1,3 +1,4 @@
+// Login.js
 import React, { useState, useEffect } from 'react';
 import { AuthClient } from '@dfinity/auth-client';
 import { HttpAgent } from '@dfinity/agent';
@@ -96,7 +97,7 @@ const Login = () => {
               <div className="feature-box">
                 <h1>Welcome</h1>
                 <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi obcaecati porro quibusdam? Beatae amet in distinctio omnis libero dolore enim quidem minima. Aperiam, modi provident cumque sapiente numquam voluptatibus illum!
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi obcaecati porro quibusdam? Beatae amet in distinctio omnis libero dolore enim quidem minima. Aperiam, modi provident cumque sapiente numquam voluptatibus illum!
                 </p>
                 <button className="btn btn-outline-primary" onClick={handleLogin}>Log in</button>
               </div>

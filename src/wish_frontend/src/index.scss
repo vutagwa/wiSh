@@ -1,3 +1,9 @@
+/* Global styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
 /* landing page */
 body {
   margin: 0;
@@ -125,13 +131,7 @@ body {
   text-align: center;
   padding: 1rem;
 }
-/* App.css */
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-}
-
+/* App styles */
 .main-content {
   margin-left: 250px;
   padding: 20px;
@@ -144,7 +144,7 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
 }
-/* Sidebar.css */
+/* Sidebar styles */
 .sidebar {
   width: 250px;
   height: 100vh;
@@ -170,7 +170,120 @@ body {
   background-color: #444;
   border-radius: 4px;
 }
+/* Login page styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+}
 
+.container {
+  padding: 0;
+}
+
+.navbar {
+  margin-bottom: 20px;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 56px); /* Adjust based on the height of your navbar */
+  padding: 20px;
+}
+
+.feature-box {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  text-align: center;
+}
+
+.feature-box h1 {
+  margin-bottom: 20px;
+  color: #007bff;
+}
+
+.feature-box p {
+  margin-bottom: 20px;
+}
+
+.btn {
+  margin: 5px;
+}
+
+img.img-fluid {
+  border-radius: 8px;
+}
+
+#not_loggedin {
+  display: flex;
+  align-items: center;
+}
+
+#not_loggedin .col-md-6:first-child {
+  text-align: center;
+}
+
+#not_loggedin .col-md-6 img {
+  max-width: 100%;
+  height: auto;
+}
+
+#loggedin {
+  display: flex;
+  align-items: center;
+}
+
+#loggedin .col-md-6:first-child {
+  text-align: center;
+}
+
+#loggedin .col-md-6 img {
+  max-width: 100%;
+  height: auto;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+}
+
+.navbar-nav .nav-link {
+  font-size: 1.1rem;
+}
+/* Wallet component styles */
+.wallet-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.card {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.balance-card {
+  background-color: #f8f9fa;
+}
+
+.deposit-card, .withdraw-card {
+  background-color: #ffffff;
+}
+
+.card-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.text-success {
+  color: #28a745;
+}
+
+.text-danger {
+  color: #dc3545;
+}
 
 @media (max-width: 768px) {
   .sidebar {

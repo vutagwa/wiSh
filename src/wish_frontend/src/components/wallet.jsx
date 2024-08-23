@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import walletActor from '../../../dfx/index4';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './Wallet.css'; // Import the custom CSS file
 
-// Component to display the balance
 const BalanceDisplay = ({ user }) => {
   const [balance, setBalance] = useState(0);
   const [error, setError] = useState('');
@@ -20,14 +21,16 @@ const BalanceDisplay = ({ user }) => {
   }, [user]);
 
   return (
-    <div style={{ margin: '20px' }}>
-      <h3>Current Balance: {balance} Wish Coins</h3>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
+    <div className="card mb-3 balance-card">
+      <div className="card-body">
+        <h3 className="card-title">Current Balance</h3>
+        <p className="card-text">Wish Coins: {balance}</p>
+        {error && <p className="text-danger">{error}</p>}
+      </div>
     </div>
   );
 };
 
-// Component to handle depositing tokens
 const DepositForm = ({ user }) => {
   const [amount, setAmount] = useState('');
   const [message, setMessage] = useState('');
@@ -51,24 +54,30 @@ const DepositForm = ({ user }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} style={{ margin: '20px' }}>
-      <div>
-        <label>Amount:</label>
-        <input
-          type="number"
-          value={amount}
-          onChange={(e) => setAmount(e.target.value)}
-          min="1"
-        />
+    <div className="card mb-3 deposit-card">
+      <div className="card-body">
+        <h4 className="card-title">Deposit Tokens</h4>
+        <form onSubmit={handleSubmit}>
+          <div className="mb-3">
+            <label htmlFor="depositAmount" className="form-label">Amount:</label>
+            <input
+              id="depositAmount"
+              type="number"
+              className="form-control"
+              value={amount}
+              onChange={(e) => setAmount(e.target.value)}
+              min="1"
+            />
+          </div>
+          {error && <p className="text-danger">{error}</p>}
+          {message && <p className="text-success">{message}</p>}
+          <button type="submit" className="btn btn-primary">Deposit</button>
+        </form>
       </div>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-      {message && <p>{message}</p>}
-      <button type="submit">Deposit</button>
-    </form>
+    </div>
   );
 };
 
-// Component to handle withdrawing tokens
 const WithdrawForm = ({ user }) => {
   const [amount, setAmount] = useState('');
   const [message, setMessage] = useState('');
@@ -92,27 +101,34 @@ const WithdrawForm = ({ user }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} style={{ margin: '20px' }}>
-      <div>
-        <label>Amount:</label>
-        <input
-          type="number"
-          value={amount}
-          onChange={(e) => setAmount(e.target.value)}
-          min="1"
-        />
+    <div className="card mb-3 withdraw-card">
+      <div className="card-body">
+        <h4 className="card-title">Withdraw Tokens</h4>
+        <form onSubmit={handleSubmit}>
+          <div className="mb-3">
+            <label htmlFor="withdrawAmount" className="form-label">Amount:</label>
+            <input
+              id="withdrawAmount"
+              type="number"
+              className="form-control"
+              value={amount}
+              onChange={(e) => setAmount(e.target.value)}
+              min="1"
+            />
+          </div>
+          {error && <p className="text-danger">{error}</p>}
+          {message && <p className="text-success">{message}</p>}
+          <button type="submit" className="btn btn-primary">Withdraw</button>
+        </form>
       </div>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-      {message && <p>{message}</p>}
-      <button type="submit">Withdraw</button>
-    </form>
+    </div>
   );
 };
 
-// Main Wallet component that includes BalanceDisplay, DepositForm, and WithdrawForm
 const Wallet = ({ user }) => {
   return (
-    <div>
+    <div className="container wallet-container">
+      <h2 className="my-4">Wallet Management</h2>
       <BalanceDisplay user={user} />
       <DepositForm user={user} />
       <WithdrawForm user={user} />
