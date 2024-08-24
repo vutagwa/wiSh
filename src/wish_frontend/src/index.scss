@@ -72,6 +72,7 @@ body {
   position: relative;
   overflow: hidden;
   color: white;
+  display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
@@ -83,30 +84,85 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -1; 
-  transition: .15s;
+  z-index: -1;
+  transition: opacity 0.15s ease;
 }
 
 video {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: .6;
+  opacity: 0.6;
 }
 
-.header2, .section, .footer {
-  position: relative;
-  z-index: 1; 
+.header2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+  color: #fff;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
 
-.fancy-font {
+.logo {
+  font-size: 1.75rem;
+  font-weight: bold;
   font-family: 'Pacifico', cursive;
-  font-size: 2em; 
-  color: #bb7e4f; 
 }
+
+.navbar {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navbar li {
+  margin: 0 20px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.navbar a:hover {
+  color: #ff9900;
+}
+
+.login-button {
+  background-color: #ff9900;
+  border: none;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.login-button:hover {
+  background-color: #cc7a00;
+}
+
 .section {
-  padding: 4rem 2rem;
+  padding: 5rem 2rem;
   text-align: center;
+  background: rgba(0, 0, 0, 0.4); /* Subtle background for readability */
+  border-radius: 10px;
+  margin: 1rem;
 }
 
 .home {
@@ -116,11 +172,11 @@ video {
   justify-content: center;
   flex-direction: column;
   min-height: 100vh;
-  background: transparent;
+  background: rgba(0, 0, 0, 0.4); /* Slightly darker overlay for better text contrast */
 }
 
 .home-content {
-  max-width: 600px;
+  max-width: 700px;
 }
 
 .cta-button {
@@ -130,7 +186,7 @@ video {
   padding: 1rem 2rem;
   cursor: pointer;
   border-radius: 5px;
-  font-size: 1rem;
+  font-size: 1.1rem;
   margin-top: 1rem;
 }
 
@@ -138,16 +194,26 @@ video {
   background-color: #cc7a00;
 }
 
-.about, .demo, .contact {
-  background: transparent;
-  margin-bottom: 1rem;
+.about {
+  background: rgba(0, 0, 0, 0.2); /* Light background for the about section */
 }
 
-.about img, .demo img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-  margin-top: 1rem;
+.about-container {
+  display: inline-block;
+  margin-left: 15px;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+  width: 400px;
+  border: 3px solid rgb(194, 187, 187);
+  border-radius: 8px;
+  box-shadow: 0 10px 14px rgba(44, 43, 43, 0.1);
+}
+
+.about-contents {
+  flex: 1;
+  max-width: 800px;
+  padding: 1rem;
 }
 
 .contact-form {
@@ -155,9 +221,10 @@ video {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  border: 1px solid #bdbbbb;
-  padding: 15px;
-  border-radius: 5px;
+  border: 2.5px solid #ccc;
+  padding: 20px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .contact-form div {
@@ -166,15 +233,15 @@ video {
 
 .contact-form label {
   display: block;
-  margin-right: -10px;
-  text-align: left;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
 }
 
 .contact-form input, .contact-form textarea {
   width: 100%;
-  padding: 0.5rem;
+  padding: 0.75rem;
   border-radius: 5px;
-  border: 1px solid #ccc;
+  border: 2px solid #cfcece;
   background: transparent;
 }
 
@@ -182,9 +249,10 @@ video {
   background-color: #ff9900;
   border: none;
   color: #fff;
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1.5rem;
   cursor: pointer;
   border-radius: 5px;
+  font-size: 1rem;
 }
 
 .contact-form button:hover {
@@ -196,8 +264,110 @@ video {
   color: #fff;
   text-align: center;
   padding: 1rem;
+  position: relative;
+  bottom: 0;
+  width: 100%;
 }
 
+.fancy-font {
+  font-family: 'Pacifico', cursive;
+  font-size: 2em;
+  color: #ff9900;
+}
+
+@media (max-width: 1200px) {
+  .main-content {
+    margin-left: 200px;
+  }
+
+  .sidebar {
+    width: 200px;
+  }
+}
+
+@media (max-width: 992px) {
+  .header2 {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar {
+    margin-top: 10px;
+    justify-content: flex-start;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar li {
+    margin: 5px 0;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+
+  .login-button {
+    display: block;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header2 {
+    padding: 1rem;
+  }
+
+  .navbar {
+    justify-content: center;
+  }
+
+  .home-content {
+    padding: 1rem;
+  }
+
+  .cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cardy {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .contact-form, .form-container, .feature-box {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .header2 {
+    font-size: 14px;
+  }
+
+  .navbar a {
+    font-size: 14px;
+  }
+
+  .cta-button, .login-button, .contact-form button {
+    padding: 0.5rem;
+    font-size: 0.875rem;
+  }
+
+  .contact-form input, .contact-form textarea,
+  .form-container input, .form-container textarea {
+    font-size: 0.875rem;
+  }
+}
 /* App styles */
 .main-content {
   margin-left: 250px;

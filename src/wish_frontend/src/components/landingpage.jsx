@@ -38,17 +38,26 @@ const LandingPage = () => {
           >
             <span className="fancy-font">Welcome to Wish</span>
           </motion.h1>
-          <p>Empowering you with the best decentralized experience.</p>
+          <p>Empowering individuals and communities to address critical issues like mental health, abuse, and violence through secure, decentralized technology. Join us in creating a safer, more supportive world.</p>
           <Link to="/dashboard">
-            <button className="cta-button">Get started</button>
+            <button className="cta-button">Get Started</button>
           </Link>
         </div>
       </section>
 
       <section id="about" className="section about">
-        <h2>About Us</h2>
-        <p>Our mission is to revolutionize the way you interact with decentralized applications. Discover the future with us.</p>
-        <img src="https://via.placeholder.com/600x400" alt="About Us" />
+      <h2>About Us</h2>
+        <div className="about-container">
+          <div className="about-contents">
+            <p>Wish is dedicated to transforming how society handles sensitive and critical issues. Our mission is to provide a secure, decentralized platform where individuals can report and seek support for issues like mental health struggles, child grooming, coercion, FGM, femicide, domestic violence, and various forms of assault.</p>
+          </div>
+          
+        </div>
+        <div className="about-container">
+          <div className="about-contents">
+        <p> We leverage blockchain technology to ensure privacy, safety, and transparency while incentivizing community engagement and reporting. Our goal is to foster a supportive environment that promotes healing and empowerment.</p>
+        </div>
+        </div>
       </section>
 
       <section id="demo" className="section demo">
@@ -78,7 +87,7 @@ const LandingPage = () => {
       </section>
 
       <footer className="footer">
-        <p>&copy; 2024 happy fools. All rights reserved.</p>
+        <p>&copy; 2024 Happy Fools. All rights reserved.</p>
       </footer>
     </div>
   );

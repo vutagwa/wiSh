@@ -81,7 +81,7 @@ const Login = () => {
               <button className="btn btn-outline-primary" onClick={handleLogin}>Log in</button>
             </div>
             <div className="col-md-6">
-              <img src="home-img.png" className="img-fluid" alt="Home" />
+              <img src="" className="img-fluid" alt="Home" />
             </div>
           </div>
         ) : (
