@@ -1,9 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';  // Import Framer Motion
 
 const LandingPage = () => {
   return (
     <div className="landing-page">
+      <div className="background-video">
+        <video autoPlay loop muted>
+          <source src="src/components/assets/bgvid1.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      
       <header className="header2">
         <div className="logo">
           <span className="fancy-font">Wish</span>
@@ -23,9 +31,15 @@ const LandingPage = () => {
 
       <section id="home" className="section home">
         <div className="home-content">
-          <h1><span className="fancy-font">Welcome to Wish</span></h1>
+          <motion.h1
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+          >
+            <span className="fancy-font">Welcome to Wish</span>
+          </motion.h1>
           <p>Empowering you with the best decentralized experience.</p>
-          <Link to="/userDashboard">
+          <Link to="/dashboard">
             <button className="cta-button">Get started</button>
           </Link>
         </div>

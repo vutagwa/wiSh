@@ -4,7 +4,7 @@ const Home = () => (
   <div className="homey">
     <div className="home-content">
       <h1>Welcome to Wish</h1>
-      <p>When we walk, we walk together, Even if we lose our way, we'll find it. we will be your love maze</p>
+      <p>When we walk, we walk together, Even if we lose our way, we'll find it. we will be your love</p>
       
       <div className="cards-container">
         <div className="cardy">

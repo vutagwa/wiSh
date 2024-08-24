@@ -1,6 +1,8 @@
 import { AuthClient } from "@dfinity/auth-client";
 import { HttpAgent } from "@dfinity/agent";
-import { createActor, wish_backend } from "../../declarations/wish_backend";
+import { createActor, wish_backend } from "../../../declarations/wish_backend";
+
+process.env.CANISTER_ID_WISH_BACKEND = 'b77ix-eeaaa-aaaaa-qaada-cai';
 
 const init = async () => {
   const authClient = await AuthClient.create();

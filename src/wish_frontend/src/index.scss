@@ -18,6 +18,7 @@ body {
   color: #fff;
   position: fixed;
   width: 100%;
+  height: 50px;
   z-index: 1000;
 }
 
@@ -68,10 +69,36 @@ body {
 
 /* Section styling */
 .landing-page {
-  display: flex;
+  position: relative;
+  overflow: hidden;
+  color: white;
   flex-direction: column;
   min-height: 100vh;
 }
+
+.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; 
+  transition: .15s;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: .6;
+}
+
+.header2, .section, .footer {
+  position: relative;
+  z-index: 1; 
+}
+
 .fancy-font {
   font-family: 'Pacifico', cursive;
   font-size: 2em; 
@@ -83,13 +110,13 @@ body {
 }
 
 .home {
-  background: url('./components/assets/bg1.jpeg') no-repeat center center/cover;
   color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   min-height: 100vh;
+  background: transparent;
 }
 
 .home-content {
@@ -112,7 +139,7 @@ body {
 }
 
 .about, .demo, .contact {
-  background-color: #f4f4f4;
+  background: transparent;
   margin-bottom: 1rem;
 }
 
@@ -128,6 +155,9 @@ body {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  border: 1px solid #bdbbbb;
+  padding: 15px;
+  border-radius: 5px;
 }
 
 .contact-form div {
@@ -136,7 +166,8 @@ body {
 
 .contact-form label {
   display: block;
-  margin-bottom: 0.5rem;
+  margin-right: -10px;
+  text-align: left;
 }
 
 .contact-form input, .contact-form textarea {
@@ -144,6 +175,7 @@ body {
   padding: 0.5rem;
   border-radius: 5px;
   border: 1px solid #ccc;
+  background: transparent;
 }
 
 .contact-form button {
@@ -452,41 +484,33 @@ img.img-fluid {
 }
 
 /* CommunityHub styles */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f8f9fa;
-  margin: 0;
-  padding: 0;
-}
-
 .container {
   padding: 20px;
-  max-width: 800px;
-  margin: auto;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
 }
 
 .header {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 16px;
-  color: #d6ae7e;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.create-post-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.create-post-btn:hover {
+  background-color: #0056b3;
 }
 
 .create-post-section {
   margin-bottom: 20px;
-  padding: 20px;
-  border: 1px solid #be9f78;
-  border-radius: 8px;
-  background-color: #fff9fb;
-}
-
-.create-post-section h2 {
-  margin-top: 0;
-  color: #c4a783;
 }
 
 .create-post-section form {
@@ -494,30 +518,43 @@ body {
   flex-direction: column;
 }
 
-.create-post-section label {
-  margin: 10px 0 5px;
-  color: #e2b379;
-}
-
-.create-post-section input,
-.create-post-section textarea {
-  padding: 8px;
-  border: 1px solid #947b5d;
-  border-radius: 4px;
+.create-post-section div {
   margin-bottom: 10px;
 }
 
-.create-post-section button {
-  padding: 10px;
-  background-color: #d4bda1;
-  border: none;
-  color: #fff;
-  border-radius: 4px;
-  cursor: pointer;
+.create-post-section label {
+  margin-bottom: 5px;
+  font-weight: bold;
 }
 
-.create-post-section button:hover {
-  background-color: #e07b00;
+.create-post-section textarea,
+.create-post-section input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.create-post-section .media-section {
+  position: relative;
+}
+
+.create-post-section .media-section button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.create-post-section .media-section button:hover {
+  background-color: #218838;
 }
 
 .posts-section {
@@ -525,38 +562,31 @@ body {
 }
 
 .post {
-  margin-bottom: 10px;
-  padding: 10px;
-  border: 1px solid #ff8c00;
-  border-radius: 8px;
-  background-color: #fff;
-}
-
-.post h2 {
-  margin-top: 0;
-  color: #ff8c00;
-}
-
-.post button {
-  margin-right: 10px;
-  padding: 5px 10px;
-  border: none;
+  border: 1px solid #ddd;
   border-radius: 4px;
-  cursor: pointer;
-  background-color: #ff8c00;
-  color: #fff;
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: #f9f9f9;
 }
 
-.post button:hover {
-  background-color: #e07b00;
+.post .media {
+  margin-top: 10px;
+}
+
+.post video,
+.post img {
+  max-width: 100%;
+  height: auto;
 }
 
 .error {
   color: red;
+  font-size: 14px;
 }
 
 .message {
   color: green;
+  font-size: 14px;
 }
 
 /* Dark mode */

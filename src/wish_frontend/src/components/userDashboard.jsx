@@ -10,7 +10,7 @@ import Mode from './Dashboard/mode';
 import Sidebar from './Dashboard/sidebar';
 
 const UserDashboard = () => {
-  const user = 'exampleUser';
+  const user = 'User';
 
   return (
     <Router>
