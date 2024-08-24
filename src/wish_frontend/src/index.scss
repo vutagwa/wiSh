@@ -329,20 +329,42 @@ video {
   .navbar {
     justify-content: center;
   }
+ /* Ensure this file is imported in your project */
+.logo-text {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  color: #3f51b5;
+}
 
-  .home-content {
-    padding: 1rem;
-  }
+.fancy-font {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  color: #df973a;
+}
 
-  .cards-container {
-    flex-direction: column;
-    align-items: center;
-  }
+.home-content {
+  margin-top: 20px;
+}
 
-  .cardy {
-    width: 100%;
-    max-width: 300px;
-  }
+.cards-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.cardy {
+  background-color: #ffffff;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.card-link {
+  text-decoration: none;
+  color: #e28334;
+}
+
+  
 
   .contact-form, .form-container, .feature-box {
     padding: 10px;

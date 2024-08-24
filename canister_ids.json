@@ -7,5 +7,14 @@
   },
   "case_reporting": {
     "ic": "oqnrg-bqaaa-aaaap-ahtwa-cai"
+  },
+  "community_hub": {
+    "ic": "na63a-5qaaa-aaaap-aht6a-cai"
+  },
+  "wish_backend": {
+    "ic": "nh75u-qiaaa-aaaap-aht6q-cai"
+  },
+  "wish_frontend": {
+    "ic": "no4wi-gaaaa-aaaap-aht7a-cai"
   }
 }

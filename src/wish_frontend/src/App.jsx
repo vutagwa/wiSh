@@ -6,13 +6,13 @@ import Dashboard from './components/dashboard';
 
 const App = () => {
   return (
-    <Router>
+    /*<Router>
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
-    </Router>
+    </Router>*/<Dashboard/>
   );
 };
 
